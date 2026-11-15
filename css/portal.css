@@ -144,3 +144,4 @@ body.portal-open { overflow: hidden; }
   .portal-photo,.portal-heading-line,.portal-floating{transition:none!important;}
   .portal.is-leaving{transition:none;}
 }
+
