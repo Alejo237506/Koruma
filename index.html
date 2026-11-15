@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#F2E4DA" />
+  <meta name="description" content="Quinta Amaranto: jardín y salón para momentos inolvidables en Oaxaca. Bodas, XV años, graduaciones y celebraciones especiales." />
+  <title>Quinta Amaranto — El arte de celebrar | Oaxaca</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/portal.css" />
+  <link rel="stylesheet" href="css/rose-gold.css" />
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml" />
+  <script defer src="js/portal.js"></script>
+  <script defer src="js/main.js"></script>
+  <script defer src="js/gallery.js"></script>
+  <script defer src="js/photos-3d.js"></script>
+</head>
+<body class="portal-open">
+  <div class="noise" aria-hidden="true"></div>
+  <div class="cursor-glow" aria-hidden="true"></div>
+  <!-- PORTADA INTERACTIVA, inspirada en la experiencia inmersiva de Unseen.
+       La fotografía del salón fue aportada por el usuario. Las tarjetas usan recortes de la misma imagen.
+       Para ampliar la galería, añadir fotos propias adicionales y autorizadas. -->
+  <section class="portal" id="portal" role="dialog" aria-modal="true" aria-labelledby="portal-title" aria-describedby="portal-description">
+    <div class="portal-stage" aria-hidden="true">
+      <div class="portal-photo portal-photo-base"></div>
+      <div class="portal-photo portal-photo-reveal"></div>
+      <video class="portal-video-texture" muted autoplay loop playsinline preload="metadata">
+        <source src="assets/video/luces-ambientales.mp4" type="video/mp4" />
+      </video>
+      <div class="portal-veil"></div>
+      <div class="portal-light"></div>
+      <div class="portal-outline-word">UN LUGAR INOLVIDABLE</div>
+      <div class="portal-coordinates">17°03′ N &nbsp;&nbsp; 96°46′ W</div>
+    </div>
+
+    <div class="portal-topbar">
+      <div class="portal-identity"><span class="portal-identity-icon">A<span>✦</span></span><span>QUINTA AMARANTO <small>O A X A C A</small></span></div>
+      <div class="portal-topright"><span class="portal-live"><i></i> EXPERIENCIA INTERACTIVA</span><span>EST. OAXACA / MÉXICO</span></div>
+    </div>
+
+    <div class="portal-floating portal-floating-left" data-portal-float="1" aria-hidden="true">
+      <img src="assets/img/quinta-amaranto-jardin.webp" data-fallback="assets/img/quinta-amaranto-fachada.webp" alt="" />
+      <span>01 / JARDINES</span>
+    </div>
+    <div class="portal-floating portal-floating-right" data-portal-float="-1" aria-hidden="true">
+      <img src="assets/img/quinta-amaranto-arcos.webp" data-fallback="assets/img/quinta-amaranto-fachada.webp" alt="" />
+      <span>02 / LOS ARCOS</span>
+    </div>
+
+    <div class="portal-vertical portal-vertical-left" aria-hidden="true">UN DESTINO PARA CELEBRAR&nbsp; ✦ &nbsp;OAXACA</div>
+    <div class="portal-vertical portal-vertical-right" aria-hidden="true">DONDE TODO COMIENZA&nbsp; ✦ &nbsp;2026</div>
+
+    <div class="portal-content">
+      <p class="portal-kicker"><span></span> BIENVENIDOS A NUESTRO MUNDO <span></span></p>
+      <h2 class="portal-heading" id="portal-title" aria-label="QUINTA AMARANTO">
+        <span class="portal-heading-line portal-heading-first" data-portal-line>QUINTA</span>
+        <span class="portal-heading-line portal-heading-last" data-portal-line>AMARANTO</span>
+      </h2>
+      <div class="portal-emblem" aria-hidden="true">✳</div>
+      <p class="portal-description" id="portal-description">Tu historia merece un escenario <em>extraordinario.</em></p>
+      <button class="portal-enter" id="portal-enter" type="button">
+        <span class="portal-enter-text">ENTRAR A LA EXPERIENCIA <small>DESCUBRE QUINTA AMARANTO</small></span>
+        <span class="portal-enter-icon" aria-hidden="true"><span>↗</span></span>
+      </button>
+    </div>
+
+    <div class="portal-bottom">
+      <span class="portal-bottom-id">QA® &nbsp; / &nbsp; PRIMERA IMPRESIÓN</span>
+      <span class="portal-interaction-hint"><span class="portal-hint-icon">✺</span> <span class="portal-hint-desktop">MUEVE EL CURSOR PARA DESCUBRIR LOS DETALLES</span><span class="portal-hint-mobile">TOCA LA PANTALLA PARA REVELAR</span></span>
+      <button type="button" class="portal-scroll-enter" id="portal-scroll-enter">DESLIZA PARA ENTRAR <span aria-hidden="true">↓</span></button>
+    </div>
+  </section>
+  <noscript><style>.portal{display:none!important}body.portal-open{overflow:auto!important}</style></noscript>
+
+  <header class="site-header" id="top">
+    <a class="brand" href="#inicio" aria-label="Quinta Amaranto — inicio">
+      <span class="brand-mark" aria-hidden="true">A<span class="brand-star">✦</span></span>
+      <span class="brand-type"><strong>QUINTA AMARANTO</strong><small>O A X A C A</small></span>
+    </a>
+    <nav class="desktop-nav" aria-label="Navegación principal">
+      <a href="#experiencia">Experiencia</a>
+      <a href="#espacios">Espacios</a>
+      <a href="#galeria">Galería</a>
+      <a href="#ubicacion">Ubicación</a>
+    </nav>
+    <a  href="#contacto" class="btn"><span>Agenda tu evento</span><span aria-hidden="true">↗</span></a>
+    <button class="menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-menu">
+      <span></span><span></span>
+    </button>
+    <nav class="mobile-menu" id="mobile-menu" aria-label="Menú móvil">
+      <a href="#experiencia">Experiencia <span>01</span></a>
+      <a href="#espacios">Espacios <span>02</span></a>
+      <a href="#galeria">Galería <span>03</span></a>
+      <a href="#ubicacion">Ubicación <span>04</span></a>
+      <a href="#contacto">Agenda tu evento <span>↗</span></a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO: imagen aportada por el usuario + video ambiental abstracto (NO es video del recinto). -->
+    <section class="hero" id="inicio" aria-labelledby="hero-title">
+      <div class="hero-photo" aria-hidden="true"></div>
+      <video class="hero-video" autoplay muted loop playsinline preload="metadata" aria-hidden="true">
+        <source src="assets/video/luces-ambientales.mp4" type="video/mp4" />
+      </video>
+      <div class="hero-shade" aria-hidden="true"></div>
+      <div class="hero-grid" aria-hidden="true"></div>
+
+
+
+      <div class="hero-ghost" aria-hidden="true">AMARANTO</div>
+
+      <!-- Reemplazo de la antigua escultura Three.js: tarjetas fotográficas en capas 3D. -->
+      <div class="hero-photo-stage" aria-label="Fotografías de Quinta Amaranto">
+        <div class="photo-stage-aura" aria-hidden="true"></div>
+        <figure class="hero-frame hero-frame-main" data-photo-depth="0.72">
+          <img src="assets/img/quinta-amaranto-fachada.webp" alt="Fachada de arcos naranjas y jardines iluminados de Quinta Amaranto por la noche" />
+          <figcaption><span>01 / QUINTA AMARANTO</span><span>OAXACA, MÉXICO</span></figcaption>
+        </figure>
+        <figure class="hero-frame hero-frame-detail" data-photo-depth="1.16">
+          <img src="assets/img/quinta-amaranto-jardin.webp" alt="Acercamiento a las áreas verdes e iluminación del jardín" />
+          <figcaption>JARDINES <span>↗</span></figcaption>
+        </figure>
+        <figure class="hero-frame hero-frame-top" data-photo-depth="1.4">
+          <img src="assets/img/quinta-amaranto-luces.webp" alt="Acercamiento a la arquitectura y las luces del recinto" />
+          <figcaption>DETALLES QUE INSPIRAN</figcaption>
+        </figure>
+        <div class="hero-photo-stamp" aria-hidden="true"><span>UNA HISTORIA</span><strong>✳</strong><span>POR CELEBRAR</span></div>
+        <div class="hero-stage-label" aria-hidden="true">RECUERDOS QUE VIVEN PARA SIEMPRE &nbsp;·&nbsp; 17° N</div>
+      </div>
+
+      <div class="hero-side hero-side-left" aria-hidden="true">EST. EN OAXACA <span>✦</span> EVENTOS INOLVIDABLES</div>
+      <div class="hero-side hero-side-right" aria-hidden="true">17° N · OAXACA, MÉXICO</div>
+
+      <div class="hero-content container">
+        <div class="eyebrow hero-eyebrow"><span class="eyebrow-line"></span> UN ESCENARIO PARA LO EXTRAORDINARIO <span class="hero-no">01 / 04</span></div>
+        <h1 id="hero-title" class="hero-title"><span class="hero-title-line">El arte de</span><span class="hero-title-line hero-title-main" data-text="celebrar.">celebrar<span class="dot">.</span></span></h1>
+        <div class="hero-subline">
+          <p>Hay momentos que no se repiten.<br/>Merecen un lugar que tampoco.</p>
+          <a href="#experiencia" class="circle-link magnetic" aria-label="Descubre Quinta Amaranto"><span aria-hidden="true">↘</span></a>
+        </div>
+      </div>
+      <div class="hero-footer container">
+        <span>QUINTA AMARANTO <span class="separator">/</span> OAXACA, MÉXICO</span>
+        <a href="#experiencia">DESLIZA PARA DESCUBRIR <span class="scroll-arrow">↓</span></a>
+        <span>LA CELEBRACIÓN COMIENZA AQUÍ</span>
+      </div>
+    </section>
+
+    <div class="ticker" aria-label="Bodas, quince años, graduaciones y eventos inolvidables">
+      <div class="ticker-track" aria-hidden="true">
+        <span>BODAS <i>✦</i> XV AÑOS <i>✦</i> GRADUACIONES <i>✦</i> CELEBRACIONES <i>✦</i> MOMENTOS ÚNICOS <i>✦</i></span>
+        <span>BODAS <i>✦</i> XV AÑOS <i>✦</i> GRADUACIONES <i>✦</i> CELEBRACIONES <i>✦</i> MOMENTOS ÚNICOS <i>✦</i></span>
+      </div>
+    </div>
+
+    <section class="intro-section section-pad" id="experiencia">
+      <div class="container intro-layout">
+        <div class="intro-copy">
+          <div class="eyebrow reveal"><span class="eyebrow-line"></span> MÁS QUE UN LUGAR</div>
+          <h2 class="section-title reveal">Donde cada<br/><em>historia</em> se vuelve<br/><span class="outline-word">inolvidable.</span></h2>
+          <p class="body-copy reveal">Entre jardines, arquitectura y atmósferas que inspiran, cada celebración encuentra su propio escenario. Porque los mejores recuerdos merecen vivirse en grande.</p>
+          <a href="#espacios" class="text-link reveal">DESCUBRE NUESTROS ESPACIOS <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="intro-visual" data-parallax="0.08">
+          <div class="photo-arch">
+            <img loading="lazy" src="assets/img/quinta-amaranto-arcos.webp" data-fallback="assets/img/quinta-amaranto-fachada.webp" alt="Arcos y jardines de Quinta Amaranto en Oaxaca" />
+          </div>
+          <div class="floating-seal" aria-hidden="true"><span>QUINTA</span><strong>A</strong><span>AMARANTO</span></div>
+          <div class="floating-photo" data-tilt>
+            <img loading="lazy" src="assets/img/quinta-amaranto-arcos.webp" data-fallback="assets/img/quinta-amaranto-fachada.webp" alt="Montaje de mesas para una recepción elegante" />
+            <span>DETALLES QUE PERDURAN <i>↗</i></span>
+          </div>
+          <span class="visual-caption">UNA ATMÓSFERA ÚNICA / OAXACA</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="statement-section" aria-labelledby="statement-title">
+      <video class="statement-video" autoplay muted loop playsinline preload="none" aria-hidden="true"><source src="assets/video/luces-ambientales.mp4" type="video/mp4" /></video>
+      <div class="statement-halo" aria-hidden="true"></div>
+      <div class="container statement-inner">
+        <div class="eyebrow reveal"><span class="eyebrow-line"></span> EL ENCANTO DE CADA MOMENTO</div>
+        <h2 id="statement-title" class="statement-title reveal">No es solo un evento.<br/>Es <em>tu historia</em> en escena<span class="dot">.</span></h2>
+        <div class="statement-row reveal">
+          <div class="statement-index">02 <span>—</span> 04</div>
+          <p>Desde el primer brindis hasta la última canción. Cada instante cuenta.</p>
+          <div class="star-ornament" aria-hidden="true">✳</div>
+        </div>
+      </div>
+      <div class="statement-orbit orbit-a" aria-hidden="true"></div>
+      <div class="statement-orbit orbit-b" aria-hidden="true"></div>
+    </section>
+
+    <section class="spaces section-pad" id="espacios">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div><div class="eyebrow"><span class="eyebrow-line"></span> NUESTROS ESPACIOS</div><h2 class="section-title">La magia está<br/>en <em>cada rincón.</em></h2></div>
+          <p>Un lugar que se transforma con tus ideas y acompaña cada momento de la celebración.</p>
+        </div>
+        <div class="space-grid">
+          <article class="space-card space-card-large reveal" data-tilt>
+            <img loading="lazy" src="assets/img/quinta-amaranto-entrada.webp" data-fallback="assets/img/quinta-amaranto-fachada.webp" alt="Jardines e iluminación nocturna de Quinta Amaranto" />
+            <div class="space-overlay"><div><span>01 — NATURALEZA</span><h3>Jardines de ensueño</h3><p>Momentos al aire libre que se convierten en recuerdos eternos.</p></div><span class="space-arrow">↗</span></div>
+          </article>
+          <article class="space-card reveal" data-tilt>
+            <img loading="lazy" src="assets/img/quinta-amaranto-arcos.webp" data-fallback="assets/img/quinta-amaranto-fachada.webp" alt="Recepción y montaje en salón de eventos" />
+            <div class="space-overlay"><div><span>02 — CELEBRACIÓN</span><h3>Salón & recepciones</h3><p>Un escenario versátil para celebrar a tu manera.</p></div><span class="space-arrow">↗</span></div>
+          </article>
+          <article class="space-card reveal" data-tilt>
+            <img loading="lazy" src="assets/img/quinta-amaranto-luces.webp" data-fallback="assets/img/quinta-amaranto-fachada.webp" alt="Jardín iluminado de noche en Quinta Amaranto" />
+            <div class="space-overlay"><div><span>03 — EXPERIENCIA</span><h3>Noches inolvidables</h3><p>Luces, música y la emoción de estar juntos.</p></div><span class="space-arrow">↗</span></div>
+          </article>
+        </div>
+        <p class="spaces-note reveal">Arquitectura · Jardines · Iluminación · Celebraciones</p>
+      </div>
+    </section>
+
+    <section class="gallery-section section-pad" id="galeria" aria-labelledby="gallery-title">
+      <div class="gallery-bg-word" aria-hidden="true">MOMENTOS</div>
+      <div class="container gallery-head">
+        <div><div class="eyebrow reveal"><span class="eyebrow-line"></span> POSTALES DEL RECINTO</div><h2 id="gallery-title" class="section-title reveal">Una mirada.<br/><em>Mil emociones.</em></h2></div>
+        <p class="reveal">Descubre detalles del recinto a través de nuestra selección fotográfica.</p>
+      </div>
+      <div class="gallery-stage" id="gallery-stage" aria-roledescription="carrusel" aria-label="Galería de Quinta Amaranto" tabindex="0">
+        <div class="gallery-card" data-index="0"><img draggable="false" loading="lazy" src="assets/img/quinta-amaranto-arcos.webp" data-fallback="assets/img/quinta-amaranto-fachada.webp" alt="Arquitectura de arcos y áreas verdes" /><span>Jardines y arquitectura</span></div>
+        <div class="gallery-card" data-index="1"><img draggable="false" loading="lazy" src="assets/img/quinta-amaranto-arcos.webp" data-fallback="assets/img/quinta-amaranto-fachada.webp" alt="Mesas decoradas en un evento" /><span>Celebraciones con estilo</span></div>
+        <div class="gallery-card" data-index="2"><img draggable="false" loading="lazy" src="assets/img/quinta-amaranto-luces.webp" data-fallback="assets/img/quinta-amaranto-fachada.webp" alt="Ambiente nocturno con iluminación" /><span>Noches con magia</span></div>
+        <div class="gallery-card" data-index="3"><img draggable="false" loading="lazy" src="assets/img/quinta-amaranto-jardin.webp" data-fallback="assets/img/quinta-amaranto-fachada.webp" alt="Terraza y montañas al fondo" /><span>Espacios para compartir</span></div>
+        <div class="gallery-card" data-index="4"><img draggable="false" loading="lazy" src="assets/img/quinta-amaranto-entrada.webp" data-fallback="assets/img/quinta-amaranto-fachada.webp" alt="Exteriores y jardines del recinto" /><span>Detalles que enamoran</span></div>
+      </div>
+      <div class="gallery-controls container">
+        <div class="gallery-count" aria-live="polite"><span id="current-slide">01</span><span class="count-divider"></span><span>05</span></div>
+        <p>DESLIZA PARA EXPLORAR <span>↔</span></p>
+        <div class="gallery-buttons"><button type="button" id="gallery-prev" aria-label="Imagen anterior">←</button><button type="button" id="gallery-next" aria-label="Imagen siguiente">→</button></div>
+      </div>
+    </section>
+
+    <section class="occasion-section section-pad" id="ocasiones">
+      <div class="container occasion-layout">
+        <div class="occasion-top reveal"><div class="eyebrow"><span class="eyebrow-line"></span> HAY MUCHAS RAZONES PARA CELEBRAR</div><h2 class="section-title">Cualquier ocasión.<br/><em>Una experiencia única.</em></h2></div>
+        <div class="occasion-items">
+          <a href="#contacto" class="occasion-item reveal"><span class="occasion-index">01</span><span class="occasion-name">Bodas <span class="occasion-sub">El comienzo de todo</span></span><span class="occasion-icon">↗</span></a>
+          <a href="#contacto" class="occasion-item reveal"><span class="occasion-index">02</span><span class="occasion-name">XV años <span class="occasion-sub">Un momento para brillar</span></span><span class="occasion-icon">↗</span></a>
+          <a href="#contacto" class="occasion-item reveal"><span class="occasion-index">03</span><span class="occasion-name">Graduaciones <span class="occasion-sub">Celebra lo que viene</span></span><span class="occasion-icon">↗</span></a>
+          <a href="#contacto" class="occasion-item reveal"><span class="occasion-index">04</span><span class="occasion-name">Eventos especiales <span class="occasion-sub">Tu historia, tus reglas</span></span><span class="occasion-icon">↗</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="location-section" id="ubicacion">
+      <div class="location-image" aria-hidden="true"></div>
+      <div class="location-shade" aria-hidden="true"></div>
+      <div class="container location-content">
+        <div class="eyebrow reveal"><span class="eyebrow-line"></span> AQUÍ COMIENZAN LOS GRANDES RECUERDOS</div>
+        <h2 class="section-title reveal">En el corazón<br/>de <em>Oaxaca.</em></h2>
+        <div class="location-bottom reveal"><p>Carretera a Atzompa 1851<br/>Agencia de Policía Montoya<br/>Oaxaca de Juárez, Oaxaca.</p><a class="location-link" href="https://www.google.com/maps/search/?api=1&query=Quinta+Amaranto+Carretera+a+Atzompa+1851+Oaxaca" target="_blank" rel="noopener noreferrer">VER EN GOOGLE MAPS <span>↗</span></a></div>
+      </div>
+      <div class="location-coordinate">17.06187° N <span>•</span> 96.75722° O</div>
+    </section>
+
+    <section class="contact-section section-pad" id="contacto">
+      <div class="contact-orbit" aria-hidden="true"></div>
+      <div class="container contact-inner">
+        <div class="eyebrow reveal"><span class="eyebrow-line"></span> HAGAMOS QUE SUCEDA</div>
+        <h2 class="contact-title reveal">Tu gran día<br/>merece <em>algo grande.</em></h2>
+        <p class="reveal">Cuéntanos qué imaginas. El siguiente capítulo de tu historia puede comenzar aquí.</p>
+        <div class="contact-actions reveal">
+          <a class="contact-btn magnetic" href="tel:+529511779125">LLAMAR PARA COTIZAR <span>↗</span></a>
+          <a class="contact-secondary" href="https://wa.me/529511779125?text=Hola%2C%20me%20gustar%C3%ADa%20solicitar%20informaci%C3%B3n%20para%20un%20evento%20en%20Quinta%20Amaranto." target="_blank" rel="noopener noreferrer">CONSULTAR POR WHATSAPP <span>↗</span></a>
+        </div>
+        <div class="contact-footnote">CONTACTO TELEFÓNICO PÚBLICO: 951 177 9125 · CONFIRMAR DISPONIBILIDAD Y DATOS DE CONTACTO</div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-top"><div class="footer-logo">QUINTA<span>AMARANTO</span></div><div class="footer-links"><a href="#inicio">INICIO</a><a href="#espacios">ESPACIOS</a><a href="#galeria">GALERÍA</a><a href="#contacto">CONTACTO</a></div></div>
+    <div class="container footer-bottom"><span>© <span id="year">2026</span> QUINTA AMARANTO · OAXACA</span><span>HECHO PARA CELEBRAR LO EXTRAORDINARIO ✦</span><a href="#inicio">VOLVER ARRIBA ↑</a></div>
+  </footer>
+</body>
+</html>

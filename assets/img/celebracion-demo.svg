@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 900" preserveAspectRatio="xMidYMid slice">
+<defs><linearGradient id="bg" x2="0" y2="1"><stop stop-color="#5e4037"/><stop offset=".6" stop-color="#8b6758"/><stop offset="1" stop-color="#2e211e"/></linearGradient><linearGradient id="floor" x2="0" y2="1"><stop stop-color="#a5866c"/><stop offset="1" stop-color="#35271d"/></linearGradient><radialGradient id="lamp"><stop stop-color="#ffe4b5"/><stop offset=".2" stop-color="#eab97a" stop-opacity=".65"/><stop offset="1" stop-color="#e8bb78" stop-opacity="0"/></radialGradient></defs>
+<rect width="1100" height="900" fill="url(#bg)"/><path d="M0 0H1100V340Q550 420 0 340Z" fill="#d5bd9f" opacity=".38"/>
+<path d="M0 530L1100 530V900H0Z" fill="url(#floor)"/>
+<g stroke="#f8d8af" stroke-width="2" opacity=".5"><path d="M60 0V360M240 0V360M420 0V360M600 0V360M780 0V360M960 0V360"/></g>
+<g><circle cx="240" cy="190" r="165" fill="url(#lamp)"/><circle cx="780" cy="160" r="185" fill="url(#lamp)"/><ellipse cx="240" cy="120" rx="55" ry="55" fill="#96845f"/><ellipse cx="780" cy="115" rx="60" ry="60" fill="#988862"/><circle cx="240" cy="160" r="14" fill="#fff0b7"/><circle cx="780" cy="160" r="14" fill="#fff0b7"/></g>
+<g fill="#e2c3a1"><ellipse cx="250" cy="580" rx="250" ry="90"/><ellipse cx="870" cy="585" rx="270" ry="92"/><ellipse cx="550" cy="670" rx="310" ry="100"/></g><g fill="#efdfce"><ellipse cx="250" cy="568" rx="225" ry="67"/><ellipse cx="870" cy="574" rx="245" ry="73"/><ellipse cx="550" cy="651" rx="277" ry="73"/></g>
+<g fill="#5a694d"><circle cx="250" cy="502" r="50"/><circle cx="870" cy="510" r="53"/><circle cx="550" cy="595" r="70"/></g><g fill="#e5c4b4"><circle cx="250" cy="477" r="35"/><circle cx="865" cy="490" r="33"/><circle cx="560" cy="560" r="44"/></g>
+<g fill="#f6ead1"><circle cx="190" cy="570" r="19"/><circle cx="315" cy="580" r="19"/><circle cx="805" cy="570" r="18"/><circle cx="950" cy="585" r="19"/><circle cx="428" cy="655" r="21"/><circle cx="670" cy="661" r="21"/></g>
+<rect width="1100" height="900" fill="#24130c" opacity=".19"/>
+</svg>

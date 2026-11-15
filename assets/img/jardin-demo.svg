@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1050" preserveAspectRatio="xMidYMid slice">
+<defs><linearGradient id="sky" x2="0" y2="1"><stop stop-color="#1b1522"/><stop offset=".55" stop-color="#624035"/><stop offset="1" stop-color="#1f231b"/></linearGradient><linearGradient id="arch" x1="0" x2="1"><stop stop-color="#7e3c25"/><stop offset=".5" stop-color="#d6874c"/><stop offset="1" stop-color="#6c321d"/></linearGradient><linearGradient id="path" x2="0" y2="1"><stop stop-color="#8c6145"/><stop offset="1" stop-color="#241713"/></linearGradient><radialGradient id="glow"><stop stop-color="#fff4b6"/><stop offset=".15" stop-color="#ffe1a1" stop-opacity=".8"/><stop offset="1" stop-color="#d6a66e" stop-opacity="0"/></radialGradient><filter id="blur"><feGaussianBlur stdDeviation="32"/></filter></defs>
+<rect width="1600" height="1050" fill="url(#sky)"/>
+<circle cx="1220" cy="190" r="240" fill="#a56b46" opacity=".14" filter="url(#blur)"/>
+<path d="M0 580Q330 450 570 545T1110 510T1600 560V1050H0Z" fill="#29312b"/>
+<path d="M0 600H1600V830H0Z" fill="#514033"/>
+<!-- three carved warm archways, illustrative and not a photograph -->
+<g fill="url(#arch)"><rect x="50" y="230" width="130" height="490"/><rect x="535" y="230" width="125" height="490"/><rect x="1020" y="230" width="130" height="490"/><rect x="1500" y="230" width="130" height="490"/><path d="M50 240V165Q355 24 660 165V240H535V212Q355 102 180 212V240Z"/><path d="M535 240V165Q842 24 1150 165V240H1020V212Q842 102 660 212V240Z"/><path d="M1020 240V165Q1328 24 1630 165V240H1500V212Q1328 102 1150 212V240Z"/></g>
+<path d="M0 755Q760 670 1600 755V1050H0Z" fill="url(#path)"/>
+<path d="M550 740Q740 720 1040 740L1430 1050H140Z" fill="#a77c5a" opacity=".19"/>
+<g fill="#1d3a2c"><path d="M0 710Q70 620 140 710T290 710T450 715T650 718T790 720V800H0Z"/><path d="M800 710Q890 610 980 710T1140 710T1300 700T1460 720T1650 700V800H800Z"/></g>
+<g fill="#314634" opacity=".9"><ellipse cx="240" cy="675" rx="100" ry="53"/><ellipse cx="1270" cy="669" rx="132" ry="57"/><ellipse cx="950" cy="704" rx="64" ry="37"/></g>
+<g><circle cx="110" cy="228" r="90" fill="url(#glow)"/><circle cx="594" cy="218" r="105" fill="url(#glow)"/><circle cx="1080" cy="228" r="90" fill="url(#glow)"/><circle cx="1550" cy="222" r="100" fill="url(#glow)"/><circle cx="110" cy="228" r="6" fill="#ffedb6"/><circle cx="594" cy="218" r="6" fill="#ffedb6"/><circle cx="1080" cy="228" r="6" fill="#ffedb6"/><circle cx="1550" cy="222" r="6" fill="#ffedb6"/></g>
+<g fill="#ffdbaa" opacity=".75"><circle cx="313" cy="575" r="3"/><circle cx="459" cy="535" r="3"/><circle cx="810" cy="560" r="4"/><circle cx="1410" cy="535" r="3"/><circle cx="1190" cy="596" r="2"/></g>
+<rect width="1600" height="1050" fill="#130e0a" opacity=".2"/>
+</svg>
