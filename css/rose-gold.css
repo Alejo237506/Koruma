@@ -1,237 +1,1395 @@
+/*
+ * QUINTA AMARANTO — ESTILOS ROSE GOLD V3.3 (ORGANIZADOS)
+ *
+ * Cada clase tiene una explicación encima y cada propiedad está
+ * escrita en su propia línea para facilitar modificaciones.
+ *
+ * CAMBIO DE ESTA ENTREGA:
+ * «EL ENCANTO DE CADA MOMENTO» -> Soft Nude (#F2E4DA).
+ *
+ * Este archivo debe seguir cargándose después de style.css,
+ * animations.css y portal.css, como ya está en index.html.
+ * No se eliminaron reglas anteriores ni ajustes responsive.
+ */
+
 /* Quinta Amaranto · Edición Rose Gold V3
    Colores basados en la referencia proporcionada: #F2E4DA, #5E4B42, #B87866.
    Mantén este archivo al final para ajustar la identidad visual sin tocar las bases. */
+
+/* Variables globales de color para toda la identidad visual. */
 :root {
- --bg:#F7EEE9; --bg2:#F0DDD3; --wine:#5E4B42; --wine2:#78594F;
- --cream:#F2E4DA; --ivory:#FFF8F4; --gold:#B87866; --gold-light:#E1AD9E;
- --muted:#81685D; --line:rgba(94,75,66,.22);
- --nude:#F2E4DA; --taupe:#5E4B42; --rose:#B87866;
- --latte:#D9B9A9; --blush:#EFD0C6; --mocha:#3C2D29; --paper:#FFF8F4;
+  --bg: #F7EEE9;
+  --bg2: #F0DDD3;
+  --wine: #5E4B42;
+  --wine2: #78594F;
+  --cream: #F2E4DA;
+  --ivory: #FFF8F4;
+  --gold: #B87866;
+  --gold-light: #E1AD9E;
+  --muted: #81685D;
+  --line: rgba(94,75,66,.22);
+  --nude: #F2E4DA;
+  --taupe: #5E4B42;
+  --rose: #B87866;
+  --latte: #D9B9A9;
+  --blush: #EFD0C6;
+  --mocha: #3C2D29;
+  --paper: #FFF8F4;
 }
-body {background:var(--paper);color:var(--mocha)}
-::selection{background:var(--rose);color:#fff}
-.noise{opacity:.045}
-.cursor-glow{background:radial-gradient(circle,rgba(184,120,102,.13),transparent 66%);mix-blend-mode:multiply}
-.eyebrow,.eyebrow-line{color:var(--rose)}
-.eyebrow-line{background:var(--rose)}
+
+/* Color general del fondo de la página y del texto. */
+body {
+  background: var(--paper);
+  color: var(--mocha);
+}
+
+/* Colores al seleccionar texto con el cursor. */
+::selection {
+  background: var(--rose);
+  color: #fff;
+}
+
+/* Textura sutil que evita que el fondo se vea completamente plano. */
+.noise {
+  opacity: .045;
+}
+
+/* Halo de luz que acompaña al cursor. */
+.cursor-glow {
+  background: radial-gradient(circle,rgba(184,120,102,.13),transparent 66%);
+  mix-blend-mode: multiply;
+}
+
+/* Textos pequeños en mayúsculas que introducen cada sección. */
+.eyebrow,
+.eyebrow-line {
+  color: var(--rose);
+}
+
+/* Rayita decorativa situada antes de esos subtítulos. */
+.eyebrow-line {
+  background: var(--rose);
+}
 
 /* Portada Unseen con fachada y paleta suave */
-.portal {background:#F2E4DA;color:var(--mocha)}
-.portal-photo{background-image:url('../assets/img/quinta-amaranto-fachada.webp');background-position:55% 46%;}
-.portal-photo-base{filter:grayscale(.15) sepia(.11) brightness(1.08) saturate(.88);opacity:.63}
-.portal-photo-reveal{filter:sepia(.06) brightness(1.13) contrast(1.04) saturate(1.3);opacity:.9}
-.portal-veil{background:
- linear-gradient(90deg,rgba(242,228,218,.93),rgba(242,228,218,.65) 35%,rgba(242,228,218,.18) 75%,rgba(242,228,218,.4)),
- linear-gradient(180deg,rgba(242,228,218,.79),rgba(242,228,218,.05) 30%,rgba(242,228,218,.08) 60%,rgba(242,228,218,.95));}
-.portal-video-texture{opacity:.09;mix-blend-mode:screen;filter:sepia(1) saturate(0)}
-.portal-light{background:radial-gradient(circle 170px at var(--px) var(--py),rgba(246,223,213,.35),transparent 90%);mix-blend-mode:screen}
-.portal-outline-word{position:absolute;bottom:13%;left:4%;right:4%;font:800 clamp(45px,8vw,155px)/1 'Manrope',sans-serif;letter-spacing:-.07em;color:transparent;-webkit-text-stroke:1px rgba(94,75,66,.16);text-align:center;white-space:nowrap}
-.portal-coordinates{color:#735448}
-.portal-topbar{border-bottom:1px solid rgba(94,75,66,.12)}
-.portal-identity{color:var(--mocha);text-shadow:none}
-.portal-identity-icon,.portal-identity small{color:var(--rose)}
-.portal-identity-icon span{color:var(--rose)}
-.portal-topright{color:var(--taupe)}
-.portal-live i{background:var(--rose);box-shadow:0 0 0 5px #b878661b}
-.portal-kicker{color:var(--taupe);text-shadow:none}
-.portal-kicker span{background:var(--rose)}
-.portal-heading{filter:drop-shadow(0 15px 30px rgba(94,75,66,.14))}
-.portal-heading-first{color:#47332E;text-shadow:1px 1px 0 #d9b9a9}
-.portal-heading-last{color:#B87866;text-shadow:1px 1px 0 #9e6453,3px 4px 0 #8d574a,6px 7px 0 #6a4038,14px 18px 20px #543a3438}
-.portal-emblem{color:var(--rose);filter:drop-shadow(0 0 15px #c7887680)}
-.portal-description{color:#483630;text-shadow:none}
-.portal-description em{color:#a76353}
-.portal-enter{background:var(--taupe);color:#fffaf5;border-color:var(--taupe);box-shadow:0 10px 28px #5e4b4238}
-.portal-enter-icon{background:#F2E4DA;color:var(--mocha)}
-.portal-enter-text small{color:#f5e1d5}
-.portal-enter:hover,.portal-enter:focus-visible{background:var(--rose);border-color:var(--rose);color:white}
-.portal-enter:hover .portal-enter-icon{background:#fffaf5}
-.portal-floating{background:var(--paper);border:1px solid rgba(94,75,66,.13);box-shadow:0 20px 46px #47302c3b;border-radius:3px}
-.portal-floating img{filter:saturate(.88) sepia(.08)}
-.portal-floating span{color:var(--taupe)}
-.portal-vertical{color:#735448}
-.portal-bottom{color:var(--taupe);border-top:1px solid #5e4b422f;background:linear-gradient(0deg,#f2e4dad9,transparent)}
-.portal-hint-icon,.portal-scroll-enter span{color:var(--rose)}
-.portal-scroll-enter:hover{color:var(--rose)}
+
+/* Pantalla de bienvenida que se muestra antes de entrar al sitio. */
+.portal {
+  background: #F2E4DA;
+  color: var(--mocha);
+}
+
+/* Fotografía de fondo de la bienvenida (no de la página principal). */
+.portal-photo {
+  background-image: url('../assets/img/quinta-amaranto-fachada.webp');
+  background-position: 55% 46%;
+}
+
+/* Capa fotográfica tenue de la pantalla de bienvenida. */
+.portal-photo-base {
+  filter: grayscale(.15) sepia(.11) brightness(1.08) saturate(.88);
+  opacity: .63;
+}
+
+/* Capa de imagen más intensa que se revela con el cursor. */
+.portal-photo-reveal {
+  filter: sepia(.06) brightness(1.13) contrast(1.04) saturate(1.3);
+  opacity: .9;
+}
+
+/* Degradado que suaviza la foto y permite leer los textos de bienvenida. */
+.portal-veil {
+  background: linear-gradient(90deg,rgba(242,228,218,.93),rgba(242,228,218,.65) 35%,rgba(242,228,218,.18) 75%,rgba(242,228,218,.4)),
+    linear-gradient(180deg,rgba(242,228,218,.79),rgba(242,228,218,.05) 30%,rgba(242,228,218,.08) 60%,rgba(242,228,218,.95));
+}
+
+/* Video de luces decorativas encima del fondo de bienvenida. */
+.portal-video-texture {
+  opacity: .09;
+  mix-blend-mode: screen;
+  filter: sepia(1) saturate(0);
+}
+
+/* Iluminación interactiva localizada en la bienvenida. */
+.portal-light {
+  background: radial-gradient(circle 170px at var(--px) var(--py),rgba(246,223,213,.35),transparent 90%);
+  mix-blend-mode: screen;
+}
+
+/* Texto gigante decorativo en contorno detrás de la bienvenida. */
+.portal-outline-word {
+  position: absolute;
+  bottom: 13%;
+  left: 4%;
+  right: 4%;
+  font: 800 clamp(45px,8vw,155px)/1 'Manrope',sans-serif;
+  letter-spacing: -.07em;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(94,75,66,.16);
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* Pequeña referencia geográfica de bienvenida. */
+.portal-coordinates {
+  color: #735448;
+}
+
+/* Borde de la barra superior de la bienvenida. */
+.portal-topbar {
+  border-bottom: 1px solid rgba(94,75,66,.12);
+}
+
+/* Nombre pequeño de la marca en la bienvenida. */
+.portal-identity {
+  color: var(--mocha);
+  text-shadow: none;
+}
+
+/* Monograma y acento de color del logotipo en bienvenida. */
+.portal-identity-icon,
+.portal-identity small {
+  color: var(--rose);
+}
+
+/* Monograma y acento de color del logotipo en bienvenida. Detalles del texto o elemento interior. */
+.portal-identity-icon span {
+  color: var(--rose);
+}
+
+/* Leyendas situadas arriba a la derecha de la bienvenida. */
+.portal-topright {
+  color: var(--taupe);
+}
+
+/* Punto indicador decorativo de experiencia interactiva. */
+.portal-live i {
+  background: var(--rose);
+  box-shadow: 0 0 0 5px #b878661b;
+}
+
+/* Texto pequeño BIENVENIDOS A NUESTRO MUNDO. */
+.portal-kicker {
+  color: var(--taupe);
+  text-shadow: none;
+}
+
+/* Texto pequeño BIENVENIDOS A NUESTRO MUNDO. Detalles del texto o elemento interior. */
+.portal-kicker span {
+  background: var(--rose);
+}
+
+/* Título principal Quinta Amaranto de la bienvenida. */
+.portal-heading {
+  filter: drop-shadow(0 15px 30px rgba(94,75,66,.14));
+}
+
+/* Primera palabra del título de bienvenida: Quinta. */
+.portal-heading-first {
+  color: #47332E;
+  text-shadow: 1px 1px 0 #d9b9a9;
+}
+
+/* Segunda palabra del título de bienvenida: Amaranto. */
+.portal-heading-last {
+  color: #B87866;
+  text-shadow: 1px 1px 0 #9e6453,3px 4px 0 #8d574a,6px 7px 0 #6a4038,14px 18px 20px #543a3438;
+}
+
+/* Asterisco decorativo bajo el título principal. */
+.portal-emblem {
+  color: var(--rose);
+  filter: drop-shadow(0 0 15px #c7887680);
+}
+
+/* Frase Tu historia merece un escenario extraordinario. */
+.portal-description {
+  color: #483630;
+  text-shadow: none;
+}
+
+/* Frase Tu historia merece un escenario extraordinario. Detalles del texto o elemento interior. */
+.portal-description em {
+  color: #a76353;
+}
+
+/* Botón principal ENTRAR A LA EXPERIENCIA. */
+.portal-enter {
+  background: var(--taupe);
+  color: #fffaf5;
+  border-color: var(--taupe);
+  box-shadow: 0 10px 28px #5e4b4238;
+}
+
+/* Círculo con flecha del botón de entrada. */
+.portal-enter-icon {
+  background: #F2E4DA;
+  color: var(--mocha);
+}
+
+/* Texto y subtítulo interior del botón de entrada. */
+.portal-enter-text small {
+  color: #f5e1d5;
+}
+
+/* Botón principal ENTRAR A LA EXPERIENCIA. Aspecto al interactuar. */
+.portal-enter:hover,
+.portal-enter:focus-visible {
+  background: var(--rose);
+  border-color: var(--rose);
+  color: white;
+}
+
+/* Botón principal ENTRAR A LA EXPERIENCIA. Aspecto al interactuar. */
+.portal-enter:hover .portal-enter-icon {
+  background: #fffaf5;
+}
+
+/* Fotos estilo Polaroid que flotan en la bienvenida. */
+.portal-floating {
+  background: var(--paper);
+  border: 1px solid rgba(94,75,66,.13);
+  box-shadow: 0 20px 46px #47302c3b;
+  border-radius: 3px;
+}
+
+/* Fotos estilo Polaroid que flotan en la bienvenida. Ajustes de la imagen interna. */
+.portal-floating img {
+  filter: saturate(.88) sepia(.08);
+}
+
+/* Fotos estilo Polaroid que flotan en la bienvenida. Detalles del texto o elemento interior. */
+.portal-floating span {
+  color: var(--taupe);
+}
+
+/* Letras decorativas verticales en los lados de bienvenida. */
+.portal-vertical {
+  color: #735448;
+}
+
+/* Pie de la pantalla de bienvenida. */
+.portal-bottom {
+  color: var(--taupe);
+  border-top: 1px solid #5e4b422f;
+  background: linear-gradient(0deg,#f2e4dad9,transparent);
+}
+
+/* Ícono de sugerencia para explorar la foto. Detalles del texto o elemento interior. */
+.portal-hint-icon,
+.portal-scroll-enter span {
+  color: var(--rose);
+}
+
+/* Estilos de un indicador heredado de entrada. Aspecto al interactuar. */
+.portal-scroll-enter:hover {
+  color: var(--rose);
+}
 
 /* Header del sitio principal */
-.site-header{background:linear-gradient(180deg,rgba(255,248,244,.96),rgba(255,248,244,.82));border-bottom:1px solid #5e4b4226;box-shadow:0 7px 30px #5e4b420a}
-.site-header.scrolled{background:rgba(255,248,244,.95)}
-.brand-mark,.brand-star,.brand-type small{color:var(--rose)}
-.brand-type strong,.desktop-nav a{color:var(--mocha)}
-.desktop-nav a:hover{color:var(--rose)}
-.nav-cta{background:var(--taupe);color:#fffaf5;border-color:var(--taupe)}
-.nav-cta:hover{background:var(--rose);color:white}
-.menu-toggle{border-color:#5e4b4240}
-.menu-toggle span{background:var(--taupe)}
-.mobile-menu{background:var(--paper);color:var(--mocha)}
+
+/* Barra superior fija de la página principal. */
+.site-header {
+  background: linear-gradient(180deg,rgba(255,248,244,.96),rgba(255,248,244,.82));
+  border-bottom: 1px solid #5e4b4226;
+  box-shadow: 0 7px 30px #5e4b420a;
+}
+
+/* Barra superior fija de la página principal. */
+.site-header.scrolled {
+  background: rgba(255,248,244,.95);
+}
+
+/* Letra A grande en el logotipo de la barra. */
+.brand-mark,
+.brand-star,
+.brand-type small {
+  color: var(--rose);
+}
+
+/* Nombre y ubicación en el logotipo. Detalles del texto o elemento interior. */
+.brand-type strong,
+.desktop-nav a {
+  color: var(--mocha);
+}
+
+/* Enlaces del menú principal en computadora. Aspecto al interactuar. */
+.desktop-nav a:hover {
+  color: var(--rose);
+}
+
+/* Botón Agenda tu evento del encabezado; se mantiene en una línea y redondeado. */
+.nav-cta {
+  background: var(--taupe);
+  color: #fffaf5;
+  border-color: var(--taupe);
+}
+
+/* Botón Agenda tu evento del encabezado; se mantiene en una línea y redondeado. Aspecto al interactuar. */
+.nav-cta:hover {
+  background: var(--rose);
+  color: white;
+}
+
+/* Botón circular para abrir el menú en celular. */
+.menu-toggle {
+  border-color: #5e4b4240;
+}
+
+/* Botón circular para abrir el menú en celular. Detalles del texto o elemento interior. */
+.menu-toggle span {
+  background: var(--taupe);
+}
+
+/* Panel desplegable de navegación para celulares. */
+.mobile-menu {
+  background: var(--paper);
+  color: var(--mocha);
+}
 
 /* Hero claro, con fotos en 3D a la derecha (sustituye escultura). */
-.hero{height:100svh;min-height:760px;isolation:isolate;background:linear-gradient(115deg,#FFF8F4 5%,#F8EBE5 49%,#EAC9BA 100%)}
-.hero-photo{background-image:none;opacity:0;animation:none}
-.hero-video{opacity:.055;mix-blend-mode:multiply;filter:sepia(1) saturate(.25)}
-.hero-shade{background:radial-gradient(ellipse at 95% 30%,#b8786629,transparent 47%),linear-gradient(180deg,#fff8f4aa,transparent 52%,#f4e6dfaa)}
-.hero-grid{opacity:.32;background-image:linear-gradient(#b8786610 1px,transparent 1px),linear-gradient(90deg,#b8786610 1px,transparent 1px);mask-image:none}
-.hero-ghost{z-index:0;inset:auto 0 4% auto;font-size:clamp(100px,14vw,290px);-webkit-text-stroke:1px #5e4b4219}
-.hero-side{color:var(--taupe)}
-.hero-side-left span{color:var(--rose)}
-.hero-content{padding-top:13vh;z-index:4;justify-content:center}
-.hero-eyebrow{width:min(55%,700px);color:var(--rose);font-size:9px;letter-spacing:.2em}
-.hero-no{color:#9c7a6e}
-.hero-title{font-size:clamp(78px,9.55vw,157px);color:var(--mocha);line-height:.95;position:relative;z-index:3;margin-top:32px;margin-bottom:18px;max-width:57%;letter-spacing:-.075em}
-.hero-title-main{color:var(--rose);text-shadow:1px 1px 0 #b87866,3px 3px 0 #b17665,5px 5px 0 #946050,11px 13px 18px #5e4b4233}
-.hero-title .dot{color:#8e6559}
-.hero-subline{margin-top:22px;gap:40px}
-.hero-subline p{color:var(--taupe);font-size:14px}
-.circle-link{color:var(--taupe);border-color:#b8786688;background:#f6e4d9}
-.circle-link:hover{background:var(--rose);color:white}
-.hero-footer{color:var(--taupe);bottom:27px}
-.hero-footer .separator,.scroll-arrow{color:var(--rose)}
-.hero-footer a:hover{color:var(--rose)}
-.hero-photo-stage {position:absolute;z-index:2;right:1%;top:15%;width:49.5%;height:77%;perspective:1300px;transform-style:preserve-3d;pointer-events:none}
-.photo-stage-aura{position:absolute;inset:4% 6% 5%;border-radius:50%;background:radial-gradient(ellipse,#dcafa0cc,transparent 65%);filter:blur(50px)}
-.hero-frame{margin:0;position:absolute;background:#fff9f4;padding:8px 8px 0;box-shadow:15px 22px 47px #49342d43,0 5px 0 #fdf5f0 inset;border:1px solid #fffaf2;transform-style:preserve-3d;backface-visibility:hidden;will-change:transform}
-.hero-frame img{width:100%;height:calc(100% - 35px);object-fit:cover;filter:sepia(.06) saturate(.93)}
-.hero-frame figcaption{display:flex;justify-content:space-between;align-items:center;gap:10px;height:35px;white-space:nowrap;color:var(--taupe);font-size:9px;font-weight:800;letter-spacing:.11em;padding:0 6px}
-.hero-frame-main{left:19%;top:10%;width:70%;height:72%;z-index:2;border-radius:2px;transform:translate3d(var(--drift-x,0px),var(--drift-y,0px),0px) rotate(-3deg) rotateX(var(--turn-x,0deg)) rotateY(var(--turn-y,0deg));}
-.hero-frame-main img{object-position:53% 50%}
-.hero-frame-detail{left:0%;bottom:5%;width:42%;height:43%;z-index:3;transform:translate3d(var(--drift-x,0px),var(--drift-y,0px),75px) rotate(-11deg) rotateX(var(--turn-x,0deg)) rotateY(var(--turn-y,0deg));}
-.hero-frame-detail img{object-position:center center}
-.hero-frame-detail figcaption span{color:var(--rose);font-size:19px}
-.hero-frame-top{right:-2%;top:0;width:38%;height:38%;z-index:4;transform:translate3d(var(--drift-x,0px),var(--drift-y,0px),110px) rotate(11deg) rotateX(var(--turn-x,0deg)) rotateY(var(--turn-y,0deg));}
-.hero-frame-top img{object-position:center center}
-.hero-frame-top figcaption{font-size:8px}
-.hero-photo-stamp{position:absolute;z-index:5;right:4%;bottom:0;width:143px;height:143px;border:1px solid #f0c9bc;border-radius:50%;background:#B87866;color:white;box-shadow:0 14px 22px #49342d24;display:flex;flex-direction:column;gap:1px;align-items:center;justify-content:center;transform:rotate(16deg);animation:photoBadgeFloat 7s ease-in-out infinite}
-.hero-photo-stamp span{font-size:8px;letter-spacing:.21em;font-weight:800}
-.hero-photo-stamp strong{font:60px/.9 Georgia,serif;font-weight:400}
-.hero-stage-label{position:absolute;bottom:7%;right:27%;font-size:9px;letter-spacing:.21em;font-weight:800;color:var(--taupe)}
-@keyframes photoBadgeFloat{0%,100%{transform:translateY(0) rotate(16deg)}50%{transform:translateY(-15px) rotate(11deg)}}
-.ticker{background:var(--rose);color:white;box-shadow:0 16px 40px #5e4b4226}
-.ticker-track i{color:#f7d8cb}
+
+/* Primer bloque de la página principal, después de la bienvenida. */
+.hero {
+  height: 100svh;
+  min-height: 760px;
+  isolation: isolate;
+  background: linear-gradient(115deg,#FFF8F4 5%,#F8EBE5 49%,#EAC9BA 100%);
+}
+
+/* Fotografía de fondo del primer bloque (NO modifica la bienvenida). */
+.hero-photo {
+  background-image: none;
+  opacity: 0;
+  animation: none;
+}
+
+/* Video ambiental transparente situado sobre la foto principal. */
+.hero-video {
+  opacity: .055;
+  mix-blend-mode: multiply;
+  filter: sepia(1) saturate(.25);
+}
+
+/* Velo degradado que vuelve más tenue la foto y favorece la lectura. */
+.hero-shade {
+  background: radial-gradient(ellipse at 95% 30%,#b8786629,transparent 47%),linear-gradient(180deg,#fff8f4aa,transparent 52%,#f4e6dfaa);
+}
+
+/* Cuadrícula decorativa suave en el fondo del primer bloque. */
+.hero-grid {
+  opacity: .32;
+  background-image: linear-gradient(#b8786610 1px,transparent 1px),linear-gradient(90deg,#b8786610 1px,transparent 1px);
+  mask-image: none;
+}
+
+/* Palabra AMARANTO enorme en contorno de fondo. */
+.hero-ghost {
+  z-index: 0;
+  inset: auto 0 4% auto;
+  font-size: clamp(100px,14vw,290px);
+  -webkit-text-stroke: 1px #5e4b4219;
+}
+
+/* Rótulos verticales decorativos a los lados del bloque principal. */
+.hero-side {
+  color: var(--taupe);
+}
+
+/* Acento de color del rótulo lateral izquierdo. Detalles del texto o elemento interior. */
+.hero-side-left span {
+  color: var(--rose);
+}
+
+/* Alineación general de título y textos del inicio. */
+.hero-content {
+  padding-top: 13vh;
+  z-index: 4;
+  justify-content: center;
+}
+
+/* Texto UN ESCENARIO PARA LO EXTRAORDINARIO. */
+.hero-eyebrow {
+  width: min(55%,700px);
+  color: var(--rose);
+  font-size: 9px;
+  letter-spacing: .2em;
+}
+
+/* Numeración pequeña 01 / 04 de la portada principal. */
+.hero-no {
+  color: #9c7a6e;
+}
+
+/* Título grande El arte de celebrar. */
+.hero-title {
+  font-size: clamp(78px,9.55vw,157px);
+  color: var(--mocha);
+  line-height: .95;
+  position: relative;
+  z-index: 3;
+  margin-top: 32px;
+  margin-bottom: 18px;
+  max-width: 57%;
+  letter-spacing: -.075em;
+}
+
+/* Palabra celebrar: aspecto rose gold sin duplicado visual. */
+.hero-title-main {
+  color: var(--rose);
+  text-shadow: 1px 1px 0 #b87866,3px 3px 0 #b17665,5px 5px 0 #946050,11px 13px 18px #5e4b4233;
+}
+
+/* Título grande El arte de celebrar. */
+.hero-title .dot {
+  color: #8e6559;
+}
+
+/* Fila con la frase de momentos y la flecha circular. */
+.hero-subline {
+  margin-top: 22px;
+  gap: 40px;
+}
+
+/* Fila con la frase de momentos y la flecha circular. */
+.hero-subline p {
+  color: var(--taupe);
+  font-size: 14px;
+}
+
+/* Botón circular para ir a la siguiente sección. */
+.circle-link {
+  color: var(--taupe);
+  border-color: #b8786688;
+  background: #f6e4d9;
+}
+
+/* Botón circular para ir a la siguiente sección. Aspecto al interactuar. */
+.circle-link:hover {
+  background: var(--rose);
+  color: white;
+}
+
+/* Línea de textos y enlace de scroll al pie del inicio. */
+.hero-footer {
+  color: var(--taupe);
+  bottom: 27px;
+}
+
+/* Línea de textos y enlace de scroll al pie del inicio. */
+.hero-footer .separator,
+.scroll-arrow {
+  color: var(--rose);
+}
+
+/* Línea de textos y enlace de scroll al pie del inicio. Aspecto al interactuar. */
+.hero-footer a:hover {
+  color: var(--rose);
+}
+
+/* Escenario con profundidad para las tres fotos flotantes del salón. */
+.hero-photo-stage {
+  position: absolute;
+  z-index: 2;
+  right: 1%;
+  top: 15%;
+  width: 49.5%;
+  height: 77%;
+  perspective: 1300px;
+  transform-style: preserve-3d;
+  pointer-events: none;
+}
+
+/* Resplandor difuso que aparece detrás de las fotos flotantes. */
+.photo-stage-aura {
+  position: absolute;
+  inset: 4% 6% 5%;
+  border-radius: 50%;
+  background: radial-gradient(ellipse,#dcafa0cc,transparent 65%);
+  filter: blur(50px);
+}
+
+/* Marco blanco común a las tarjetas fotográficas 3D. */
+.hero-frame {
+  margin: 0;
+  position: absolute;
+  background: #fff9f4;
+  padding: 8px 8px 0;
+  box-shadow: 15px 22px 47px #49342d43,0 5px 0 #fdf5f0 inset;
+  border: 1px solid #fffaf2;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  will-change: transform;
+}
+
+/* Marco blanco común a las tarjetas fotográficas 3D. Ajustes de la imagen interna. */
+.hero-frame img {
+  width: 100%;
+  height: calc(100% - 35px);
+  object-fit: cover;
+  filter: sepia(.06) saturate(.93);
+}
+
+/* Marco blanco común a las tarjetas fotográficas 3D. Ajustes de la leyenda de la fotografía. */
+.hero-frame figcaption {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  height: 35px;
+  white-space: nowrap;
+  color: var(--taupe);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: .11em;
+  padding: 0 6px;
+}
+
+/* Tarjeta principal más grande del collage flotante. */
+.hero-frame-main {
+  left: 19%;
+  top: 10%;
+  width: 70%;
+  height: 72%;
+  z-index: 2;
+  border-radius: 2px;
+  transform: translate3d(var(--drift-x,0px),var(--drift-y,0px),0px) rotate(-3deg) rotateX(var(--turn-x,0deg)) rotateY(var(--turn-y,0deg));
+}
+
+/* Tarjeta principal más grande del collage flotante. Ajustes de la imagen interna. */
+.hero-frame-main img {
+  object-position: 53% 50%;
+}
+
+/* Tarjeta de detalles/jardines del collage 3D. */
+.hero-frame-detail {
+  left: 0%;
+  bottom: 5%;
+  width: 42%;
+  height: 43%;
+  z-index: 3;
+  transform: translate3d(var(--drift-x,0px),var(--drift-y,0px),75px) rotate(-11deg) rotateX(var(--turn-x,0deg)) rotateY(var(--turn-y,0deg));
+}
+
+/* Tarjeta de detalles/jardines del collage 3D. Ajustes de la imagen interna. */
+.hero-frame-detail img {
+  object-position: center center;
+}
+
+/* Tarjeta de detalles/jardines del collage 3D. Ajustes de la leyenda de la fotografía. */
+.hero-frame-detail figcaption span {
+  color: var(--rose);
+  font-size: 19px;
+}
+
+/* Tarjeta superior inclinada del collage 3D. */
+.hero-frame-top {
+  right: -2%;
+  top: 0;
+  width: 38%;
+  height: 38%;
+  z-index: 4;
+  transform: translate3d(var(--drift-x,0px),var(--drift-y,0px),110px) rotate(11deg) rotateX(var(--turn-x,0deg)) rotateY(var(--turn-y,0deg));
+}
+
+/* Tarjeta superior inclinada del collage 3D. Ajustes de la imagen interna. */
+.hero-frame-top img {
+  object-position: center center;
+}
+
+/* Tarjeta superior inclinada del collage 3D. Ajustes de la leyenda de la fotografía. */
+.hero-frame-top figcaption {
+  font-size: 8px;
+}
+
+/* Sello redondo rose gold que flota junto a las tarjetas. */
+.hero-photo-stamp {
+  position: absolute;
+  z-index: 5;
+  right: 4%;
+  bottom: 0;
+  width: 143px;
+  height: 143px;
+  border: 1px solid #f0c9bc;
+  border-radius: 50%;
+  background: #B87866;
+  color: white;
+  box-shadow: 0 14px 22px #49342d24;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(16deg);
+  animation: photoBadgeFloat 7s ease-in-out infinite;
+}
+
+/* Sello redondo rose gold que flota junto a las tarjetas. Detalles del texto o elemento interior. */
+.hero-photo-stamp span {
+  font-size: 8px;
+  letter-spacing: .21em;
+  font-weight: 800;
+}
+
+/* Sello redondo rose gold que flota junto a las tarjetas. Detalles del texto o elemento interior. */
+.hero-photo-stamp strong {
+  font: 60px/.9 Georgia,serif;
+  font-weight: 400;
+}
+
+/* Leyenda pequeña debajo del collage de fotos. */
+.hero-stage-label {
+  position: absolute;
+  bottom: 7%;
+  right: 27%;
+  font-size: 9px;
+  letter-spacing: .21em;
+  font-weight: 800;
+  color: var(--taupe);
+}
+
+/* Movimiento photoBadgeFloat aplicado a elementos animados. */
+@keyframes photoBadgeFloat {
+  /* Paso de la animación: 0%,100%. */
+  0%,100% {
+    transform: translateY(0) rotate(16deg);
+  }
+
+  /* Paso de la animación: 50%. */
+  50% {
+    transform: translateY(-15px) rotate(11deg);
+  }
+
+}
+
+/* Franja horizontal animada de tipos de celebración. */
+.ticker {
+  background: var(--rose);
+  color: white;
+  box-shadow: 0 16px 40px #5e4b4226;
+}
+
+/* Texto y adornos de la franja animada. */
+.ticker-track i {
+  color: #f7d8cb;
+}
 
 /* Interior: alternancia de superficies nude, marfil, mocha y rose-gold */
-.intro-section{background:radial-gradient(ellipse at 80% 30%,#f0cbc1,transparent 42%),var(--paper);color:var(--mocha)}
-.section-title{color:var(--mocha)}
-.section-title em,.statement-title em,.contact-title em{color:var(--rose)}
-.outline-word{-webkit-text-stroke:1px #b8786688}
-.body-copy{color:var(--taupe)}
-.text-link{border-color:var(--rose);color:var(--mocha)}
-.text-link:hover{color:var(--rose)}
-.photo-arch{border-color:#b878665c;filter:drop-shadow(0 18px 45px #5e4b4233)}
-.photo-arch img{filter:saturate(.89)}
-.floating-seal{background:var(--rose);color:white;box-shadow:0 12px 40px #5e4b423b}
-.floating-seal:before{border-color:#fff9f48a}
-.floating-photo{background:var(--paper);box-shadow:5px 20px 55px #5e4b4240}
-.floating-photo>span{color:var(--mocha)}
-.visual-caption{color:var(--taupe)}
-.statement-section{background:radial-gradient(ellipse at 50% 25%,#947266 0%,#5E4B42 44%,#3C2D29 93%);color:#fff9f4}
-.statement-section .section-title,.statement-title{color:#fff9f4}
-.statement-title em{color:#f1c7ba}
-.statement-row{border-color:#f2e4da50}
-.statement-row p{color:#f2dfd5}
-.statement-index,.star-ornament{color:#f1c7ba}
-.statement-halo{background:radial-gradient(circle,#f6cfbf22,transparent 70%)}
-.spaces{background:#F2E4DA;color:var(--mocha)}
-.spaces .section-title{color:var(--mocha)}
-.spaces .section-title em,.spaces .eyebrow{color:var(--rose)}
-.spaces .eyebrow-line{background:var(--rose)}
-.section-heading>p,.spaces-note{color:var(--taupe)}
-.space-card{border-radius:3px;box-shadow:0 14px 38px #5e4b4222}
-.space-overlay span:not(.space-arrow){color:#edc0b1}
-.gallery-section{background:radial-gradient(ellipse at 45% 60%,#f2d9cf,#fff8f4 66%);color:var(--mocha)}
-.gallery-bg-word{-webkit-text-stroke:1px #b878662a}
-.gallery-head p,.gallery-controls p{color:var(--taupe)}
-.gallery-card{background:var(--paper);border-color:var(--paper);box-shadow:0 25px 65px #5e4b424c}
-.gallery-count{color:var(--taupe)}
-#current-slide{color:var(--rose)}
-.gallery-buttons button{color:var(--mocha);border-color:#b878665e;background:#fff8f4}
-.gallery-buttons button:hover{color:white;background:var(--rose)}
-.occasion-section{background:linear-gradient(145deg,#fff8f4,#F2E4DA 68%,#EAC9BA);color:var(--mocha)}
-.occasion-section .section-title{color:var(--mocha)}
-.occasion-index{color:var(--rose)}
-.occasion-item:hover{color:var(--rose)}
-.occasion-sub{color:#83685f}
-.location-image{background-image:url('../assets/img/quinta-amaranto-fachada.webp');filter:saturate(.9);background-position:50% 50%}
-.location-shade{background:linear-gradient(90deg,#32231fd9,#3c2d29a0 65%,#3c2d295d),linear-gradient(0deg,#34231ed1,transparent 52%)}
-.location-section{color:#fff9f4}
-.location-section .section-title{color:#fff9f4}
-.location-section .eyebrow,.location-coordinate{color:#f1c7ba}
-.location-section .section-title em{color:#f1c7ba}
-.location-link{border-color:#f1c7ba}
-.contact-section{background:radial-gradient(ellipse at 55% 5%,#9a7369 0%,#5E4B42 48%,#3C2D29 100%);color:#fff9f4}
-.contact-title{color:#fff9f4}
-.contact-title em{color:#f2c7b7}
-.contact-inner>p,.contact-footnote{color:#f2ddd4}
-.contact-btn{background:#f1c7ba;color:var(--mocha);border-color:#f1c7ba}
-.contact-btn:hover{background:white}
-.contact-secondary{border-color:#f1c7ba;color:white}
-.contact-secondary:hover{background:#ffffff16}
-.contact-inner .eyebrow{color:#f1c7ba}
-.footer{background:var(--mocha);color:#f4e6df;border-color:#f2e4da25}
-.footer-logo{color:#f3cebe}
-.footer-bottom{color:#cfb2a8}
-.footer-bottom a{color:#fff9f4}
-.footer-logo span{color:#fff9f4}
 
-@media(max-width:1180px){
- .hero-title{font-size:clamp(74px,9.7vw,133px)}
- .hero-photo-stage{right:0;top:19%;width:52%;height:70%}
- .hero-frame-main{width:75%;left:16%}
- .hero-photo-stamp{width:117px;height:117px}
+/* Sección Donde cada historia se vuelve inolvidable. */
+.intro-section {
+  background: radial-gradient(ellipse at 80% 30%,#f0cbc1,transparent 42%),var(--paper);
+  color: var(--mocha);
 }
-@media(max-width:930px){
- .hero{min-height:830px}
- .hero-content{padding-top:8vh;justify-content:flex-start}
- .hero-title{max-width:100%;font-size:clamp(82px,11vw,135px);margin-top:110px}
- .hero-eyebrow{width:90%;font-size:9px}
- .hero-subline{position:relative;z-index:5;margin-top:16px}
- .hero-photo-stage{top:38%;right:2%;width:57%;height:52%;opacity:.92}
- .hero-frame-main{width:82%;height:72%;left:12%}
- .hero-frame-detail{width:40%;height:44%}
- .hero-frame-top{width:39%;height:42%}
- .hero-photo-stamp{width:96px;height:96px;bottom:-2%}
- .hero-photo-stamp strong{font-size:43px}
- .hero-stage-label{display:none}
- .hero-ghost{font-size:20vw;bottom:20%}
- .mobile-menu{background:#fff8f4}
-}
-@media(max-width:600px){
- .portal-photo{background-position:55% 45%}
- .portal-veil{background:linear-gradient(180deg,#f2e4dadb 0%,#f2e4dab8 30%,#f2e4da52 65%,#f2e4dae9 100%)}
- .portal-heading-first{font-size:clamp(66px,14vw,110px)}
- .portal-heading-last{font-size:clamp(48px,11.4vw,94px)}
- .portal-floating-right{right:4%;top:17%;width:110px;opacity:.73}
- .portal-outline-word{display:none}
- .portal-content{padding-top:130px;padding-bottom:85px}
- .portal-description{color:var(--mocha)}
- .hero{min-height:720px;height:100svh;background:linear-gradient(180deg,#FFF8F4 5%,#F2E4DA 70%,#E7C7BA 100%)}
- .hero-content{padding-top:0;justify-content:flex-start;transform:none}
- .hero-eyebrow{margin-top:125px;width:100%;font-size:8px;letter-spacing:.11em}
- .hero-no{font-size:8px}
- .hero-title{font-size:clamp(60px,15vw,94px);max-width:100%;margin:17px 0 0;line-height:1.05}
- .hero-subline{margin-top:10px;gap:18px}
- .hero-subline p{font-size:11px}
- .circle-link{width:47px;height:47px;flex-basis:47px}
- .hero-photo-stage{top:51%;right:1%;width:95%;height:38%;}
- .hero-frame{padding:5px 5px 0}
- .hero-frame img{height:calc(100% - 25px)}
- .hero-frame figcaption{height:25px;font-size:6px;letter-spacing:.07em;padding:0 3px}
- .hero-frame-main{left:26%;top:1%;width:68%;height:91%}
- .hero-frame-detail{left:2%;bottom:0;width:42%;height:66%;}
- .hero-frame-top{right:0%;top:-9%;width:36%;height:48%;}
- .hero-frame-top figcaption{font-size:5px}
- .hero-photo-stamp{width:70px;height:70px;bottom:-3%;right:0}
- .hero-photo-stamp span{font-size:5px}
- .hero-photo-stamp strong{font-size:32px}
- .hero-ghost{font-size:30vw;bottom:13%}
- .hero-footer{bottom:16px;font-size:7px;letter-spacing:.04em}
- .hero-footer a{font-size:7px}
- .hero-side{display:none}
- .statement-title,.contact-title{overflow-wrap:break-word}
-}
-@media(max-width:370px){.hero-title{font-size:14vw}.hero-photo-stage{top:54%;height:33%}.hero-eyebrow{margin-top:111px}}
-@media(prefers-reduced-motion:reduce){.hero-photo-stamp{animation:none}.hero-frame{transform:none!important}.hero-photo-stage{perspective:none}}
 
+/* Títulos grandes que se repiten en varias secciones. */
+.section-title {
+  color: var(--mocha);
+}
+
+/* Títulos grandes que se repiten en varias secciones. Detalles del texto o elemento interior. */
+.section-title em,
+.statement-title em,
+.contact-title em {
+  color: var(--rose);
+}
+
+/* Palabras decorativas con borde y sin relleno. */
+.outline-word {
+  -webkit-text-stroke: 1px #b8786688;
+}
+
+/* Párrafos descriptivos de las secciones. */
+.body-copy {
+  color: var(--taupe);
+}
+
+/* Enlace subrayado para descubrir espacios. */
+.text-link {
+  border-color: var(--rose);
+  color: var(--mocha);
+}
+
+/* Enlace subrayado para descubrir espacios. Aspecto al interactuar. */
+.text-link:hover {
+  color: var(--rose);
+}
+
+/* Foto grande recortada con forma de arco en la introducción. */
+.photo-arch {
+  border-color: #b878665c;
+  filter: drop-shadow(0 18px 45px #5e4b4233);
+}
+
+/* Foto grande recortada con forma de arco en la introducción. Ajustes de la imagen interna. */
+.photo-arch img {
+  filter: saturate(.89);
+}
+
+/* Medallón circular que acompaña a la foto de introducción. */
+.floating-seal {
+  background: var(--rose);
+  color: white;
+  box-shadow: 0 12px 40px #5e4b423b;
+}
+
+/* Medallón circular que acompaña a la foto de introducción. */
+.floating-seal:before {
+  border-color: #fff9f48a;
+}
+
+/* Fotografía secundaria superpuesta en la introducción. */
+.floating-photo {
+  background: var(--paper);
+  box-shadow: 5px 20px 55px #5e4b4240;
+}
+
+/* Fotografía secundaria superpuesta en la introducción. Detalles del texto o elemento interior. */
+.floating-photo>span {
+  color: var(--mocha);
+}
+
+/* Leyenda pequeña al pie de la foto de introducción. */
+.visual-caption {
+  color: var(--taupe);
+}
+
+/* Franja oscura con el texto EL ENCANTO DE CADA MOMENTO. */
+.statement-section {
+  background: radial-gradient(ellipse at 50% 25%,#947266 0%,#5E4B42 44%,#3C2D29 93%);
+  color: #fff9f4;
+}
+
+/* EL ENCANTO DE CADA MOMENTO: cambia únicamente este subtítulo a Soft Nude (#F2E4DA). */
+.statement-section .eyebrow {
+  color: var(--nude);
+}
+
+/* Rayita junto al subtítulo anterior: mismo tono Soft Nude para que combine. */
+.statement-section .eyebrow-line {
+  background-color: var(--nude);
+}
+
+/* Franja oscura con el texto EL ENCANTO DE CADA MOMENTO. */
+.statement-section .section-title,
+.statement-title {
+  color: #fff9f4;
+}
+
+/* Titular No es solo un evento. Es tu historia en escena. Detalles del texto o elemento interior. */
+.statement-title em {
+  color: #f1c7ba;
+}
+
+/* Fila de número, frase y decoración bajo el titular central. */
+.statement-row {
+  border-color: #f2e4da50;
+}
+
+/* Fila de número, frase y decoración bajo el titular central. */
+.statement-row p {
+  color: #f2dfd5;
+}
+
+/* Número de sección situado en esa fila. */
+.statement-index,
+.star-ornament {
+  color: #f1c7ba;
+}
+
+/* Resplandor de fondo del bloque central oscuro. */
+.statement-halo {
+  background: radial-gradient(circle,#f6cfbf22,transparent 70%);
+}
+
+/* Bloque Nuestros espacios: fondo nude y texto oscuro. */
+.spaces {
+  background: #F2E4DA;
+  color: var(--mocha);
+}
+
+/* Bloque Nuestros espacios: fondo nude y texto oscuro. */
+.spaces .section-title {
+  color: var(--mocha);
+}
+
+/* Bloque Nuestros espacios: fondo nude y texto oscuro. Detalles del texto o elemento interior. */
+.spaces .section-title em,
+.spaces .eyebrow {
+  color: var(--rose);
+}
+
+/* Bloque Nuestros espacios: fondo nude y texto oscuro. */
+.spaces .eyebrow-line {
+  background: var(--rose);
+}
+
+/* Cabecera descriptiva de la sección de espacios. */
+.section-heading>p,
+.spaces-note {
+  color: var(--taupe);
+}
+
+/* Tarjetas con fotos de los jardines y espacios. */
+.space-card {
+  border-radius: 3px;
+  box-shadow: 0 14px 38px #5e4b4222;
+}
+
+/* Textos e iconos que aparecen encima de cada foto de espacios. Detalles del texto o elemento interior. */
+.space-overlay span:not(.space-arrow) {
+  color: #edc0b1;
+}
+
+/* Fondo y colores generales de la galería fotográfica. */
+.gallery-section {
+  background: radial-gradient(ellipse at 45% 60%,#f2d9cf,#fff8f4 66%);
+  color: var(--mocha);
+}
+
+/* Palabra MOMENTOS en contorno detrás del carrusel. */
+.gallery-bg-word {
+  -webkit-text-stroke: 1px #b878662a;
+}
+
+/* Textos de introducción de la galería. */
+.gallery-head p,
+.gallery-controls p {
+  color: var(--taupe);
+}
+
+/* Tarjeta individual del carrusel de fotos 3D. */
+.gallery-card {
+  background: var(--paper);
+  border-color: var(--paper);
+  box-shadow: 0 25px 65px #5e4b424c;
+}
+
+/* Número total mostrado junto al carrusel. */
+.gallery-count {
+  color: var(--taupe);
+}
+
+/* Número de la imagen activa del carrusel. */
+#current-slide {
+  color: var(--rose);
+}
+
+/* Botones de avanzar y retroceder de la galería. */
+.gallery-buttons button {
+  color: var(--mocha);
+  border-color: #b878665e;
+  background: #fff8f4;
+}
+
+/* Botones de avanzar y retroceder de la galería. Aspecto al interactuar. */
+.gallery-buttons button:hover {
+  color: white;
+  background: var(--rose);
+}
+
+/* Sección de tipos de eventos: bodas, XV años y más. */
+.occasion-section {
+  background: linear-gradient(145deg,#fff8f4,#F2E4DA 68%,#EAC9BA);
+  color: var(--mocha);
+}
+
+/* Sección de tipos de eventos: bodas, XV años y más. */
+.occasion-section .section-title {
+  color: var(--mocha);
+}
+
+/* Número de cada tipo de evento. */
+.occasion-index {
+  color: var(--rose);
+}
+
+/* Fila enlazada de cada tipo de evento. Aspecto al interactuar. */
+.occasion-item:hover {
+  color: var(--rose);
+}
+
+/* Descripción secundaria de cada evento. */
+.occasion-sub {
+  color: #83685f;
+}
+
+/* Fotografía utilizada en el bloque de ubicación. */
+.location-image {
+  background-image: url('../assets/img/quinta-amaranto-fachada.webp');
+  filter: saturate(.9);
+  background-position: 50% 50%;
+}
+
+/* Sombra oscura sobre la foto de ubicación para leer el texto. */
+.location-shade {
+  background: linear-gradient(90deg,#32231fd9,#3c2d29a0 65%,#3c2d295d),linear-gradient(0deg,#34231ed1,transparent 52%);
+}
+
+/* Colores generales de la sección de ubicación. */
+.location-section {
+  color: #fff9f4;
+}
+
+/* Colores generales de la sección de ubicación. */
+.location-section .section-title {
+  color: #fff9f4;
+}
+
+/* Colores generales de la sección de ubicación. */
+.location-section .eyebrow,
+.location-coordinate {
+  color: #f1c7ba;
+}
+
+/* Colores generales de la sección de ubicación. Detalles del texto o elemento interior. */
+.location-section .section-title em {
+  color: #f1c7ba;
+}
+
+/* Enlace para ver el sitio en Google Maps. */
+.location-link {
+  border-color: #f1c7ba;
+}
+
+/* Bloque final con invitación a contactar al salón. */
+.contact-section {
+  background: radial-gradient(ellipse at 55% 5%,#9a7369 0%,#5E4B42 48%,#3C2D29 100%);
+  color: #fff9f4;
+}
+
+/* Título principal del bloque final de contacto. */
+.contact-title {
+  color: #fff9f4;
+}
+
+/* Título principal del bloque final de contacto. Detalles del texto o elemento interior. */
+.contact-title em {
+  color: #f2c7b7;
+}
+
+/* Contenedor del mensaje y botones del bloque de contacto. */
+.contact-inner>p,
+.contact-footnote {
+  color: #f2ddd4;
+}
+
+/* Botón de contacto principal, ahora con bordes tipo cápsula. */
+.contact-btn {
+  background: #f1c7ba;
+  color: var(--mocha);
+  border-color: #f1c7ba;
+}
+
+/* Botón de contacto principal, ahora con bordes tipo cápsula. Aspecto al interactuar. */
+.contact-btn:hover {
+  background: white;
+}
+
+/* Segundo botón de contacto, también redondeado. */
+.contact-secondary {
+  border-color: #f1c7ba;
+  color: white;
+}
+
+/* Segundo botón de contacto, también redondeado. Aspecto al interactuar. */
+.contact-secondary:hover {
+  background: #ffffff16;
+}
+
+/* Contenedor del mensaje y botones del bloque de contacto. */
+.contact-inner .eyebrow {
+  color: #f1c7ba;
+}
+
+/* Pie de página con identidad y enlaces. */
+.footer {
+  background: var(--mocha);
+  color: #f4e6df;
+  border-color: #f2e4da25;
+}
+
+/* Nombre de Quinta Amaranto en el pie. */
+.footer-logo {
+  color: #f3cebe;
+}
+
+/* Créditos y enlaces inferiores del pie. */
+.footer-bottom {
+  color: #cfb2a8;
+}
+
+/* Créditos y enlaces inferiores del pie. */
+.footer-bottom a {
+  color: #fff9f4;
+}
+
+/* Nombre de Quinta Amaranto en el pie. Detalles del texto o elemento interior. */
+.footer-logo span {
+  color: #fff9f4;
+}
+
+/* Reglas para (max-width:1180px); mantienen el diseño en diferentes pantallas. */
+@media (max-width:1180px) {
+  /* Adaptación responsive: título grande El arte de celebrar. */
+  .hero-title {
+    font-size: clamp(74px,9.7vw,133px);
+  }
+
+  /* Adaptación responsive: escenario con profundidad para las tres fotos flotantes del salón. */
+  .hero-photo-stage {
+    right: 0;
+    top: 19%;
+    width: 52%;
+    height: 70%;
+  }
+
+  /* Adaptación responsive: tarjeta principal más grande del collage flotante. */
+  .hero-frame-main {
+    width: 75%;
+    left: 16%;
+  }
+
+  /* Adaptación responsive: sello redondo rose gold que flota junto a las tarjetas. */
+  .hero-photo-stamp {
+    width: 117px;
+    height: 117px;
+  }
+
+}
+
+/* Reglas para (max-width:930px); mantienen el diseño en diferentes pantallas. */
+@media (max-width:930px) {
+  /* Adaptación responsive: primer bloque de la página principal, después de la bienvenida. */
+  .hero {
+    min-height: 830px;
+  }
+
+  /* Adaptación responsive: alineación general de título y textos del inicio. */
+  .hero-content {
+    padding-top: 8vh;
+    justify-content: flex-start;
+  }
+
+  /* Adaptación responsive: título grande El arte de celebrar. */
+  .hero-title {
+    max-width: 100%;
+    font-size: clamp(82px,11vw,135px);
+    margin-top: 110px;
+  }
+
+  /* Adaptación responsive: texto UN ESCENARIO PARA LO EXTRAORDINARIO. */
+  .hero-eyebrow {
+    width: 90%;
+    font-size: 9px;
+  }
+
+  /* Adaptación responsive: fila con la frase de momentos y la flecha circular. */
+  .hero-subline {
+    position: relative;
+    z-index: 5;
+    margin-top: 16px;
+  }
+
+  /* Adaptación responsive: escenario con profundidad para las tres fotos flotantes del salón. */
+  .hero-photo-stage {
+    top: 38%;
+    right: 2%;
+    width: 57%;
+    height: 52%;
+    opacity: .92;
+  }
+
+  /* Adaptación responsive: tarjeta principal más grande del collage flotante. */
+  .hero-frame-main {
+    width: 82%;
+    height: 72%;
+    left: 12%;
+  }
+
+  /* Adaptación responsive: tarjeta de detalles/jardines del collage 3D. */
+  .hero-frame-detail {
+    width: 40%;
+    height: 44%;
+  }
+
+  /* Adaptación responsive: tarjeta superior inclinada del collage 3D. */
+  .hero-frame-top {
+    width: 39%;
+    height: 42%;
+  }
+
+  /* Adaptación responsive: sello redondo rose gold que flota junto a las tarjetas. */
+  .hero-photo-stamp {
+    width: 96px;
+    height: 96px;
+    bottom: -2%;
+  }
+
+  /* Adaptación responsive: sello redondo rose gold que flota junto a las tarjetas. Detalles del texto o elemento interior. */
+  .hero-photo-stamp strong {
+    font-size: 43px;
+  }
+
+  /* Adaptación responsive: leyenda pequeña debajo del collage de fotos. */
+  .hero-stage-label {
+    display: none;
+  }
+
+  /* Adaptación responsive: palabra AMARANTO enorme en contorno de fondo. */
+  .hero-ghost {
+    font-size: 20vw;
+    bottom: 20%;
+  }
+
+  /* Adaptación responsive: panel desplegable de navegación para celulares. */
+  .mobile-menu {
+    background: #fff8f4;
+  }
+
+}
+
+/* Reglas para (max-width:600px); mantienen el diseño en diferentes pantallas. */
+@media (max-width:600px) {
+  /* Adaptación responsive: fotografía de fondo de la bienvenida (no de la página principal). */
+  .portal-photo {
+    background-position: 55% 45%;
+  }
+
+  /* Adaptación responsive: degradado que suaviza la foto y permite leer los textos de bienvenida. */
+  .portal-veil {
+    background: linear-gradient(180deg,#f2e4dadb 0%,#f2e4dab8 30%,#f2e4da52 65%,#f2e4dae9 100%);
+  }
+
+  /* Adaptación responsive: primera palabra del título de bienvenida: Quinta. */
+  .portal-heading-first {
+    font-size: clamp(66px,14vw,110px);
+  }
+
+  /* Adaptación responsive: segunda palabra del título de bienvenida: Amaranto. */
+  .portal-heading-last {
+    font-size: clamp(48px,11.4vw,94px);
+  }
+
+  /* Adaptación responsive: foto flotante a la derecha; se ajusta en móvil. */
+  .portal-floating-right {
+    right: 4%;
+    top: 17%;
+    width: 110px;
+    opacity: .73;
+  }
+
+  /* Adaptación responsive: texto gigante decorativo en contorno detrás de la bienvenida. */
+  .portal-outline-word {
+    display: none;
+  }
+
+  /* Adaptación responsive: posición general del contenido central de la bienvenida. */
+  .portal-content {
+    padding-top: 130px;
+    padding-bottom: 85px;
+  }
+
+  /* Adaptación responsive: frase Tu historia merece un escenario extraordinario. */
+  .portal-description {
+    color: var(--mocha);
+  }
+
+  /* Adaptación responsive: primer bloque de la página principal, después de la bienvenida. */
+  .hero {
+    min-height: 720px;
+    height: 100svh;
+    background: linear-gradient(180deg,#FFF8F4 5%,#F2E4DA 70%,#E7C7BA 100%);
+  }
+
+  /* Adaptación responsive: alineación general de título y textos del inicio. */
+  .hero-content {
+    padding-top: 0;
+    justify-content: flex-start;
+    transform: none;
+  }
+
+  /* Adaptación responsive: texto UN ESCENARIO PARA LO EXTRAORDINARIO. */
+  .hero-eyebrow {
+    margin-top: 125px;
+    width: 100%;
+    font-size: 8px;
+    letter-spacing: .11em;
+  }
+
+  /* Adaptación responsive: numeración pequeña 01 / 04 de la portada principal. */
+  .hero-no {
+    font-size: 8px;
+  }
+
+  /* Adaptación responsive: título grande El arte de celebrar. */
+  .hero-title {
+    font-size: clamp(60px,15vw,94px);
+    max-width: 100%;
+    margin: 17px 0 0;
+    line-height: 1.05;
+  }
+
+  /* Adaptación responsive: fila con la frase de momentos y la flecha circular. */
+  .hero-subline {
+    margin-top: 10px;
+    gap: 18px;
+  }
+
+  /* Adaptación responsive: fila con la frase de momentos y la flecha circular. */
+  .hero-subline p {
+    font-size: 11px;
+  }
+
+  /* Adaptación responsive: botón circular para ir a la siguiente sección. */
+  .circle-link {
+    width: 47px;
+    height: 47px;
+    flex-basis: 47px;
+  }
+
+  /* Adaptación responsive: escenario con profundidad para las tres fotos flotantes del salón. */
+  .hero-photo-stage {
+    top: 51%;
+    right: 1%;
+    width: 95%;
+    height: 38%;
+  }
+
+  /* Adaptación responsive: marco blanco común a las tarjetas fotográficas 3D. */
+  .hero-frame {
+    padding: 5px 5px 0;
+  }
+
+  /* Adaptación responsive: marco blanco común a las tarjetas fotográficas 3D. Ajustes de la imagen interna. */
+  .hero-frame img {
+    height: calc(100% - 25px);
+  }
+
+  /* Adaptación responsive: marco blanco común a las tarjetas fotográficas 3D. Ajustes de la leyenda de la fotografía. */
+  .hero-frame figcaption {
+    height: 25px;
+    font-size: 6px;
+    letter-spacing: .07em;
+    padding: 0 3px;
+  }
+
+  /* Adaptación responsive: tarjeta principal más grande del collage flotante. */
+  .hero-frame-main {
+    left: 26%;
+    top: 1%;
+    width: 68%;
+    height: 91%;
+  }
+
+  /* Adaptación responsive: tarjeta de detalles/jardines del collage 3D. */
+  .hero-frame-detail {
+    left: 2%;
+    bottom: 0;
+    width: 42%;
+    height: 66%;
+  }
+
+  /* Adaptación responsive: tarjeta superior inclinada del collage 3D. */
+  .hero-frame-top {
+    right: 0%;
+    top: -9%;
+    width: 36%;
+    height: 48%;
+  }
+
+  /* Adaptación responsive: tarjeta superior inclinada del collage 3D. Ajustes de la leyenda de la fotografía. */
+  .hero-frame-top figcaption {
+    font-size: 5px;
+  }
+
+  /* Adaptación responsive: sello redondo rose gold que flota junto a las tarjetas. */
+  .hero-photo-stamp {
+    width: 70px;
+    height: 70px;
+    bottom: -3%;
+    right: 0;
+  }
+
+  /* Adaptación responsive: sello redondo rose gold que flota junto a las tarjetas. Detalles del texto o elemento interior. */
+  .hero-photo-stamp span {
+    font-size: 5px;
+  }
+
+  /* Adaptación responsive: sello redondo rose gold que flota junto a las tarjetas. Detalles del texto o elemento interior. */
+  .hero-photo-stamp strong {
+    font-size: 32px;
+  }
+
+  /* Adaptación responsive: palabra AMARANTO enorme en contorno de fondo. */
+  .hero-ghost {
+    font-size: 30vw;
+    bottom: 13%;
+  }
+
+  /* Adaptación responsive: línea de textos y enlace de scroll al pie del inicio. */
+  .hero-footer {
+    bottom: 16px;
+    font-size: 7px;
+    letter-spacing: .04em;
+  }
+
+  /* Adaptación responsive: línea de textos y enlace de scroll al pie del inicio. */
+  .hero-footer a {
+    font-size: 7px;
+  }
+
+  /* Adaptación responsive: rótulos verticales decorativos a los lados del bloque principal. */
+  .hero-side {
+    display: none;
+  }
+
+  /* Adaptación responsive: titular No es solo un evento. Es tu historia en escena. */
+  .statement-title,
+  .contact-title {
+    overflow-wrap: break-word;
+  }
+
+}
+
+/* Reglas para (max-width:370px); mantienen el diseño en diferentes pantallas. */
+@media (max-width:370px) {
+  /* Adaptación responsive: título grande El arte de celebrar. */
+  .hero-title {
+    font-size: 14vw;
+  }
+
+  /* Adaptación responsive: escenario con profundidad para las tres fotos flotantes del salón. */
+  .hero-photo-stage {
+    top: 54%;
+    height: 33%;
+  }
+
+  /* Adaptación responsive: texto UN ESCENARIO PARA LO EXTRAORDINARIO. */
+  .hero-eyebrow {
+    margin-top: 111px;
+  }
+
+}
+
+/* Reglas para (prefers-reduced-motion:reduce); mantienen el diseño en diferentes pantallas. */
+@media (prefers-reduced-motion:reduce) {
+  /* Adaptación responsive: sello redondo rose gold que flota junto a las tarjetas. */
+  .hero-photo-stamp {
+    animation: none;
+  }
+
+  /* Adaptación responsive: marco blanco común a las tarjetas fotográficas 3D. */
+  .hero-frame {
+    transform: none !important;
+  }
+
+  /* Adaptación responsive: escenario con profundidad para las tres fotos flotantes del salón. */
+  .hero-photo-stage {
+    perspective: none;
+  }
+
+}
 
 /* ==========================================================
    FOTO DE FONDO DESPUÉS DE LA BIENVENIDA (HERO PRINCIPAL)
@@ -239,6 +1397,8 @@ body {background:var(--paper);color:var(--mocha)}
    o cambia la ruta en background-image.
    No modifica la foto de la pantalla de bienvenida.
    ========================================================== */
+
+/* Fotografía de fondo del primer bloque (NO modifica la bienvenida). */
 .hero-photo {
   background-image: url("../assets/img/fondo-salon.jpg");
   background-size: cover;
@@ -248,17 +1408,26 @@ body {background:var(--paper);color:var(--mocha)}
   transform: scale(1.05);
   animation: heroZoom 15s ease-in-out infinite alternate;
 }
+
+/* Velo degradado que vuelve más tenue la foto y favorece la lectura. */
 .hero-shade {
-  background:
-    linear-gradient(90deg,
-      rgba(255,248,244,.96) 0%,
-      rgba(255,248,244,.88) 30%,
-      rgba(255,248,244,.5) 53%,
-      rgba(255,248,244,.1) 100%),
+  background: linear-gradient(90deg,
+    rgba(255,248,244,.96) 0%,
+    rgba(255,248,244,.88) 30%,
+    rgba(255,248,244,.5) 53%,
+    rgba(255,248,244,.1) 100%),
     linear-gradient(0deg,rgba(242,228,218,.62),transparent 30%);
 }
+
+/* Reglas para (max-width: 600px); mantienen el diseño en diferentes pantallas. */
 @media (max-width: 600px) {
-  .hero-photo {background-position: 53% center;opacity: .68;}
+  /* Adaptación responsive: fotografía de fondo del primer bloque (NO modifica la bienvenida). */
+  .hero-photo {
+    background-position: 53% center;
+    opacity: .68;
+  }
+
+  /* Adaptación responsive: velo degradado que vuelve más tenue la foto y favorece la lectura. */
   .hero-shade {
     background: linear-gradient(180deg,
       rgba(255,248,244,.93) 0%,
@@ -266,7 +1435,359 @@ body {background:var(--paper);color:var(--mocha)}
       rgba(255,248,244,.55) 72%,
       rgba(242,228,218,.60) 100%);
   }
+
 }
+
+/* Reglas para (prefers-reduced-motion: reduce); mantienen el diseño en diferentes pantallas. */
 @media (prefers-reduced-motion: reduce) {
-  .hero-photo {animation: none;transform: none;}
+  /* Adaptación responsive: fotografía de fondo del primer bloque (NO modifica la bienvenida). */
+  .hero-photo {
+    animation: none;
+    transform: none;
+  }
+
+}
+
+/* ==============================================================
+   V3.2 — Ajustes solicitados: tipografía editorial, acceso solo
+   por botón, título limpio, CTA de una línea y fondo más visible.
+   ============================================================== */
+
+/* Bienvenida: serif fina como el titular «En el corazón de Oaxaca». */
+
+/* Título principal Quinta Amaranto de la bienvenida. */
+.portal-heading {
+  font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  font-weight: 500;
+  letter-spacing: -.066em;
+  line-height: 1.02;
+  filter: none;
+  margin: 16px 0 14px;
+}
+
+/* Estilo común a cada renglón del título de bienvenida. */
+.portal-heading-line {
+  letter-spacing: inherit;
+  font-family: inherit;
+  font-weight: inherit;
+}
+
+/* Primera palabra del título de bienvenida: Quinta. */
+.portal-heading-first {
+  color: #47332e;
+  font-size: clamp(90px, 12.6vw, 198px);
+  text-shadow: 0 8px 28px rgba(94,75,66,.13);
+}
+
+/* Segunda palabra del título de bienvenida: Amaranto. */
+.portal-heading-last {
+  color: #9f614f;
+  font-style: italic;
+  font-size: clamp(78px, 10.5vw, 170px);
+  text-shadow: 0 9px 28px rgba(94,75,66,.16);
+}
+
+/* Título principal Quinta Amaranto de la bienvenida. */
+.portal-heading .char {
+  font-style: inherit;
+}
+
+/* Leyenda ENTRA CON EL BOTÓN en el pie de bienvenida. */
+.portal-entry-note {
+  font-size: 9px;
+  font-weight: 750;
+  letter-spacing: .17em;
+  color: var(--taupe);
+  white-space: nowrap;
+}
+
+/* Leyenda ENTRA CON EL BOTÓN en el pie de bienvenida. Detalles del texto o elemento interior. */
+.portal-entry-note span {
+  color: var(--rose);
+  font-size: 18px;
+  margin-left: 7px;
+  vertical-align: middle;
+}
+
+/* «celebrar.» en tinta rose gold: sin capas ni bordes desplazados. */
+
+/* Palabra celebrar: aspecto rose gold sin duplicado visual. */
+.hero-title-main,
+.hero-title-main .dot {
+  text-shadow: none !important;
+  -webkit-text-stroke: 0;
+  filter: none;
+}
+
+/* Un poco más de foto real visible, manteniendo legibles las letras. */
+
+/* Fotografía de fondo del primer bloque (NO modifica la bienvenida). */
+.hero-photo {
+  opacity: .95;
+}
+
+/* Velo degradado que vuelve más tenue la foto y favorece la lectura. */
+.hero-shade {
+  background: linear-gradient(90deg,
+    rgba(255,248,244,.88) 0%,
+    rgba(255,248,244,.68) 29%,
+    rgba(255,248,244,.28) 56%,
+    rgba(255,248,244,.08) 100%),
+    linear-gradient(0deg, rgba(242,228,218,.45), transparent 38%);
+}
+
+/* Reglas para (max-width: 930px); mantienen el diseño en diferentes pantallas. */
+@media (max-width: 930px) {
+  /* Mostrar CTA junto al menú también en pantallas pequeñas. */
+
+  /* Adaptación responsive: barra superior fija de la página principal. */
+  .site-header {
+    gap: 10px;
+  }
+
+  /* Adaptación responsive: botón Agenda tu evento del encabezado; se mantiene en una línea y redondeado. */
+  .nav-cta {
+    display: inline-flex;
+    white-space: nowrap;
+    border-radius: 999px;
+    flex-shrink: 0;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: .075em;
+  }
+
+  /* Adaptación responsive: botón Agenda tu evento del encabezado; se mantiene en una línea y redondeado. Detalles del texto o elemento interior. */
+  .nav-cta span:first-child {
+    white-space: nowrap;
+  }
+
+}
+
+/* Reglas para (max-width: 740px); mantienen el diseño en diferentes pantallas. */
+@media (max-width: 740px) {
+  /* Adaptación responsive: título principal Quinta Amaranto de la bienvenida. */
+  .portal-heading {
+    line-height: 1.05;
+    letter-spacing: -.058em;
+    margin: 13px 0 12px;
+  }
+
+  /* Adaptación responsive: primera palabra del título de bienvenida: Quinta. */
+  .portal-heading-first {
+    font-size: clamp(75px, 23.5vw, 126px);
+  }
+
+  /* Adaptación responsive: segunda palabra del título de bienvenida: Amaranto. */
+  .portal-heading-last {
+    font-size: clamp(66px, 19.3vw, 107px);
+  }
+
+}
+
+/* Reglas para (max-width: 600px); mantienen el diseño en diferentes pantallas. */
+@media (max-width: 600px) {
+  /* Adaptación responsive: barra superior fija de la página principal. */
+  .site-header {
+    height: 72px;
+    padding: 0 12px;
+    gap: 7px;
+    justify-content: space-between;
+  }
+
+  /* Adaptación responsive: distribución horizontal del logotipo y nombre de la marca. */
+  .brand {
+    gap: 6px;
+    min-width: 0;
+    flex-shrink: 1;
+  }
+
+  /* Adaptación responsive: letra A grande en el logotipo de la barra. */
+  .brand-mark {
+    font-size: 35px;
+    flex-shrink: 0;
+  }
+
+  /* Adaptación responsive: nombre y ubicación en el logotipo. Detalles del texto o elemento interior. */
+  .brand-type strong {
+    font-size: 8px;
+    letter-spacing: .12em;
+    white-space: nowrap;
+  }
+
+  /* Adaptación responsive: nombre y ubicación en el logotipo. */
+  .brand-type small {
+    font-size: 6px;
+    letter-spacing: .28em;
+  }
+
+  /* Adaptación responsive: botón Agenda tu evento del encabezado; se mantiene en una línea y redondeado. */
+  .nav-cta {
+    display: inline-flex;
+    gap: 5px;
+    padding: 10px 10px;
+    font-size: 8px;
+    letter-spacing: .055em;
+    line-height: 1;
+    flex: 0 0 auto;
+    border-radius: 999px;
+  }
+
+  /* Adaptación responsive: botón Agenda tu evento del encabezado; se mantiene en una línea y redondeado. Detalles del texto o elemento interior. */
+  .nav-cta span:last-child {
+    font-size: 13px;
+    line-height: 1;
+  }
+
+  /* Adaptación responsive: botón circular para abrir el menú en celular. */
+  .menu-toggle {
+    display: flex;
+    flex: 0 0 34px;
+    width: 34px;
+    height: 34px;
+    padding: 8px;
+    border-radius: 50%;
+  }
+
+  /* Adaptación responsive: panel desplegable de navegación para celulares. */
+  .mobile-menu {
+    top: 71px;
+  }
+
+  /* Adaptación responsive: primera palabra del título de bienvenida: Quinta. */
+  .portal-heading-first {
+    font-size: clamp(75px, 23.5vw, 126px);
+  }
+
+  /* Adaptación responsive: segunda palabra del título de bienvenida: Amaranto. */
+  .portal-heading-last {
+    font-size: clamp(62px, 19.3vw, 105px);
+  }
+
+  /* Adaptación responsive: leyenda ENTRA CON EL BOTÓN en el pie de bienvenida. */
+  .portal-entry-note {
+    font-size: 8px;
+    letter-spacing: .08em;
+  }
+
+  /* Adaptación responsive: fotografía de fondo del primer bloque (NO modifica la bienvenida). */
+  .hero-photo {
+    opacity: .87;
+  }
+
+  /* Adaptación responsive: velo degradado que vuelve más tenue la foto y favorece la lectura. */
+  .hero-shade {
+    background: linear-gradient(180deg,
+      rgba(255,248,244,.78) 0%,
+      rgba(255,248,244,.69) 31%,
+      rgba(255,248,244,.24) 68%,
+      rgba(242,228,218,.38) 100%);
+  }
+
+}
+
+/* Reglas para (max-width:370px); mantienen el diseño en diferentes pantallas. */
+@media (max-width:370px) {
+  /* Adaptación responsive: barra superior fija de la página principal. */
+  .site-header {
+    padding: 0 9px;
+    gap: 5px;
+  }
+
+  /* Adaptación responsive: letra A grande en el logotipo de la barra. */
+  .brand-mark {
+    font-size: 31px;
+  }
+
+  /* Adaptación responsive: nombre y ubicación en el logotipo. Detalles del texto o elemento interior. */
+  .brand-type strong {
+    font-size: 7px;
+    letter-spacing: .07em;
+  }
+
+  /* Adaptación responsive: nombre y ubicación en el logotipo. */
+  .brand-type small {
+    font-size: 5.5px;
+    letter-spacing: .16em;
+  }
+
+  /* Adaptación responsive: botón Agenda tu evento del encabezado; se mantiene en una línea y redondeado. */
+  .nav-cta {
+    font-size: 7.3px;
+    gap: 3px;
+    padding: 9px 8px;
+  }
+
+  /* Adaptación responsive: botón circular para abrir el menú en celular. */
+  .menu-toggle {
+    flex-basis: 31px;
+    width: 31px;
+    height: 31px;
+  }
+
+}
+
+/* ==============================================================
+   V3.3 — Botones tipo cápsula y foto de inicio más tenue.
+   Estos estilos afectan SOLO al sitio después de «Entrar»:
+   la fotografía y el diseño de la bienvenida permanecen intactos.
+   ============================================================== */
+
+/* Curvas verdaderamente redondas en cualquier tamaño de pantalla. */
+
+/* Botón Agenda tu evento del encabezado; se mantiene en una línea y redondeado. */
+.nav-cta,
+.contact-btn,
+.contact-secondary {
+  border-radius: 9999px;
+}
+
+/* Botón Agenda tu evento del encabezado; se mantiene en una línea y redondeado. */
+.nav-cta {
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/* Botón Agenda tu evento del encabezado; se mantiene en una línea y redondeado. Detalles del texto o elemento interior. */
+.nav-cta > span:first-child {
+  white-space: nowrap;
+}
+
+/* Botón Agenda tu evento del encabezado; se mantiene en una línea y redondeado. Detalles del texto o elemento interior. */
+.nav-cta > span:last-child {
+  flex-shrink: 0;
+}
+
+/* Atenuación sutil de la fotografía de la página principal. */
+
+/* Fotografía de fondo del primer bloque (NO modifica la bienvenida). */
+.hero-photo {
+  opacity: .87;
+}
+
+/* Velo degradado que vuelve más tenue la foto y favorece la lectura. */
+.hero-shade {
+  background: linear-gradient(90deg,
+    rgba(255,248,244,.92) 0%,
+    rgba(255,248,244,.75) 29%,
+    rgba(255,248,244,.36) 56%,
+    rgba(255,248,244,.14) 100%),
+    linear-gradient(0deg, rgba(242,228,218,.49), transparent 38%);
+}
+
+/* Reglas para (max-width: 600px); mantienen el diseño en diferentes pantallas. */
+@media (max-width: 600px) {
+  /* Adaptación responsive: fotografía de fondo del primer bloque (NO modifica la bienvenida). */
+  .hero-photo {
+    opacity: .78;
+  }
+
+  /* Adaptación responsive: velo degradado que vuelve más tenue la foto y favorece la lectura. */
+  .hero-shade {
+    background: linear-gradient(180deg,
+      rgba(255,248,244,.84) 0%,
+      rgba(255,248,244,.76) 31%,
+      rgba(255,248,244,.34) 68%,
+      rgba(242,228,218,.45) 100%);
+  }
+
 }
