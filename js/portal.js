@@ -3,7 +3,6 @@
   'use strict';
   const portal = document.getElementById('portal');
   const button = document.getElementById('portal-enter');
-  const scrollButton = document.getElementById('portal-scroll-enter');
   if (!portal || !button) return;
 
   const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -31,8 +30,6 @@
   let pointerX = 0.65;
   let pointerY = 0.4;
   let active = true;
-  let wheelAmount = 0;
-  let touchStartY = null;
   const finePointer = window.matchMedia('(pointer: fine)').matches;
 
   function moveVisuals() {
@@ -78,7 +75,7 @@
     window.scrollTo({ top: 0, behavior: 'auto' });
     const finish = () => {
       if (portal.parentNode) portal.remove();
-      if (document.activeElement === button || document.activeElement === scrollButton) {
+      if (document.activeElement === button) {
         const title = document.getElementById('hero-title');
         title?.setAttribute('tabindex', '-1');
         title?.focus({ preventScroll: true });
@@ -89,7 +86,6 @@
   }
 
   button.addEventListener('click', enter);
-  scrollButton?.addEventListener('click', enter);
   portal.addEventListener('pointermove', updatePointer, { passive: true });
   portal.addEventListener('pointerdown', event => {
     if (!event.target.closest('button')) portal.classList.add('is-peeking');
@@ -100,28 +96,8 @@
   portal.addEventListener('pointercancel', cancelPeek, { passive: true });
   portal.addEventListener('pointerleave', cancelPeek, { passive: true });
 
-  portal.addEventListener('wheel', event => {
-    // Deslizar hacia abajo desde la portada también permite entrar.
-    if (event.deltaY <= 0) return;
-    wheelAmount += event.deltaY;
-    if (wheelAmount > 115) enter();
-  }, { passive: true });
-  portal.addEventListener('touchstart', event => {
-    touchStartY = event.changedTouches?.[0]?.clientY ?? null;
-  }, { passive: true });
-  portal.addEventListener('touchend', event => {
-    if (touchStartY === null) return;
-    const distance = touchStartY - (event.changedTouches?.[0]?.clientY ?? touchStartY);
-    if (distance > 95) enter();
-    touchStartY = null;
-  }, { passive: true });
-
-  document.addEventListener('keydown', event => {
-    if (!active) return;
-    if (event.key === 'PageDown' || event.key === 'ArrowDown' || event.key === 'Enter' && document.activeElement === portal) {
-      event.preventDefault(); enter();
-    }
-  });
+  // La única forma de abrir el sitio es pulsar el botón de entrada.
+  // No capturamos wheel, swipe/touchmove ni flechas del teclado.
   // Las imágenes públicas podrían bloquear hotlinks: la demostración tiene sustitutos locales.
   portal.querySelectorAll('img[data-fallback]').forEach(img => {
     img.addEventListener('error', () => {
